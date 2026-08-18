@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HOODBTC V2 Preview</title>
+  <meta name="description" content="HOODBTC V2 preview — decentralized trading infrastructure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-grid"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand"><img src="https://hoodbtc.com/hoodbtc-logo.png" alt="HOODBTC logo"><span>HOOD<span>BTC</span></span></a>
+      <nav class="desktop-nav">
+        <a href="#platform">Platform</a><a href="#liquidity">Deep Liquidity</a><a href="#technology">Technology</a><a href="#transparency">Transparency</a><a href="#trade">Launch Trading</a>
+      </nav>
+      <a class="nav-cta" href="#trade">Trade Now ↗</a>
+      <button class="menu-btn" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">DECENTRALIZED TRADING INFRASTRUCTURE</p>
+        <h1>DECENTRALIZED<br><span>TRADING</span><br>INFRASTRUCTURE</h1>
+        <p class="lead">Professional access. Deep liquidity.<br>Onchain transparency. Non-custodial control.</p>
+        <div class="live-line"><i></i> PLATFORM LIVE</div>
+        <div class="hero-actions"><a class="btn primary" href="#trade">Trade Now ↗</a><a class="btn secondary" href="#how">Learn More</a></div>
+        <div class="hero-features">
+          <div><b>♢</b><span>Non-Custodial<br>By Design</span></div>
+          <div><b>▥</b><span>Deep Liquidity<br>Access</span></div>
+          <div><b>▣</b><span>Transparent<br>& Verifiable</span></div>
+          <div><b>ϟ</b><span>High Performance<br>Infrastructure</span></div>
+        </div>
+      </div>
+
+      <div class="terminal" id="platform">
+        <div class="terminal-top"><div class="mini-brand"><img src="https://hoodbtc.com/hoodbtc-logo.png" alt=""><span>HOODBTC</span></div><div class="terminal-tabs"><span class="active">Trade</span><span>Markets</span><span>Portfolio</span><span>Analytics</span></div><button>Connect Wallet</button></div>
+        <div class="market-strip"><div><small>BTC/USDT</small><b>67,842.3</b><em>+2.43%</em></div><div><small>24h Change</small><b>+2.43%</b></div><div><small>24h High</small><b>68,240.0</b></div><div><small>24h Low</small><b>65,210.4</b></div><div><small>24h Volume</small><b>Market data</b></div></div>
+        <div class="terminal-body">
+          <div class="chart-panel">
+            <div class="chart-toolbar"><span>BTC/USDT <small>Perpetual</small></span><div><i>1m</i><i>5m</i><i>15m</i><i>1h</i><i>4h</i><i>1D</i></div></div>
+            <svg viewBox="0 0 620 280" class="chart" aria-hidden="true">
+              <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#36f06f" stop-opacity=".18"/><stop offset="100%" stop-color="#36f06f" stop-opacity="0"/></linearGradient></defs>
+              <g class="grid-lines"><path d="M0 40H620M0 90H620M0 140H620M0 190H620M0 240H620"/><path d="M80 0V280M160 0V280M240 0V280M320 0V280M400 0V280M480 0V280M560 0V280"/></g>
+              <path class="area" d="M0 220 C40 210,50 145,90 155 S135 245,175 214 S220 152,258 173 S300 210,338 170 S390 118,430 135 S470 145,500 105 S548 118,620 45 L620 280 L0 280 Z"/>
+              <path class="line" d="M0 220 C40 210,50 145,90 155 S135 245,175 214 S220 152,258 173 S300 210,338 170 S390 118,430 135 S470 145,500 105 S548 118,620 45"/>
+              <g class="candles"><rect x="44" y="142" width="8" height="34"/><rect x="89" y="155" width="8" height="46" class="red"/><rect x="139" y="198" width="8" height="33"/><rect x="197" y="163" width="8" height="44"/><rect x="246" y="169" width="8" height="31" class="red"/><rect x="300" y="179" width="8" height="31"/><rect x="354" y="151" width="8" height="42"/><rect x="418" y="120" width="8" height="42"/><rect x="492" y="100" width="8" height="41"/><rect x="566" y="68" width="8" height="42"/></g>
+            </svg>
+            <div class="chart-footer"><span>Positions</span><span>Orders</span><span>History</span><span>Funding</span><span>Assets</span></div>
+            <div class="position-row"><div><small>BTC/USDT</small><b>Long</b></div><div><small>Size</small><b>2.548 BTC</b></div><div><small>Entry Price</small><b>65,432.1</b></div><div><small>Mark Price</small><b>67,842.3</b></div><div><small>PNL</small><b class="green">+6,132.54</b></div></div>
+          </div>
+          <aside class="trade-panel">
+            <div class="trade-tabs"><span>Cross</span><span>20x</span></div>
+            <div class="switcher"><span>Isolated</span><span>Market</span><span class="selected">Limit</span></div>
+            <label>Price<div>67,842.3 <small>USDT</small></div></label>
+            <label>Size<div>0.25 <small>BTC</small></div></label>
+            <div class="range"><i></i><span></span></div>
+            <small>Available <b>12,542.35 USDT</b></small>
+            <div class="trade-buttons"><button>Buy / Long</button><button>Sell / Short</button></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="mid container" id="how">
+      <div class="how-block">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>Three Steps to Trade</h2>
+        <div class="steps">
+          <article><div class="icon">▭</div><span>01</span><h3>Connect Wallet</h3><p>Connect your wallet securely in seconds.</p></article>
+          <article><div class="icon">▥</div><span>02</span><h3>Select Market</h3><p>Choose a supported market and set your position.</p></article>
+          <article><div class="icon">ϟ</div><span>03</span><h3>Trade Instantly</h3><p>Execute through deep liquidity and focused workflows.</p></article>
+        </div>
+      </div>
+      <div class="why" id="liquidity">
+        <p class="eyebrow">WHY HOODBTC?</p>
+        <h2>Built for Traders.<br>Backed by Infrastructure.</h2>
+        <p>HOODBTC is a decentralized trading interface built on top of advanced infrastructure to deliver deep liquidity, transparency, and non-custodial market access.</p>
+        <ul><li>Decentralized & Non-Custodial</li><li>Shared Deep Liquidity Access</li><li>Transparent & Onchain Verifiable</li><li>Focused, Professional Trading UX</li></ul>
+      </div>
+    </section>
+
+    <section class="info-rail container" id="technology">
+      <div><span>◎</span><p><b>NON-CUSTODIAL</b><small>User-controlled wallet access</small></p></div>
+      <div><span>◫</span><p><b>SHARED LIQUIDITY</b><small>Connected market infrastructure</small></p></div>
+      <div><span>◉</span><p><b>ONCHAIN MARKETS</b><small>Transparent market access</small></p></div>
+      <div><span>♢</span><p><b>24/7 ACCESS</b><small>Always-on trading interface</small></p></div>
+    </section>
+
+    <section class="cta container" id="trade"><div><p class="eyebrow">PLATFORM LIVE</p><h2>Ready to experience decentralized trading?</h2></div><a class="btn primary" href="https://trade.hoodbtc.com" target="_blank" rel="noreferrer">Trade Now ↗</a></section>
+  </main>
+
+  <footer id="transparency">
+    <div class="container footer-grid">
+      <div class="footer-brand"><a href="#top" class="brand"><img src="https://hoodbtc.com/hoodbtc-logo.png" alt="HOODBTC logo"><span>HOOD<span>BTC</span></span></a><p>Decentralized trading infrastructure focused on professional access, deep liquidity, transparency, and non-custodial control.</p><div class="social-icons"><a href="https://x.com/peterhazimcrypt?s=11">X</a><a href="https://www.tiktok.com/@hoodbtc666k">♪</a><a href="https://chat.whatsapp.com/KtzK1qxeDrk7YnXHWYdhpj?s=cl&p=i&ilr=4">◉</a><a href="https://snapchat.com/t/hzg3D942">◌</a></div></div>
+      <div><h4>Platform</h4><a href="#platform">Platform</a><a href="#liquidity">Deep Liquidity</a><a href="#technology">Technology</a><a href="#transparency">Transparency</a><a href="https://trade.hoodbtc.com">Launch Trading</a></div>
+      <div><h4>Community</h4><a href="https://x.com/peterhazimcrypt?s=11">X</a><a href="https://www.tiktok.com/@hoodbtc666k">TikTok</a><a href="https://chat.whatsapp.com/KtzK1qxeDrk7YnXHWYdhpj?s=cl&p=i&ilr=4">WhatsApp</a><a href="https://snapchat.com/t/hzg3D942">Snapchat</a></div>
+      <div><h4>Company</h4><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Security</a><a href="#">Contact</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 HOODBTC. All rights reserved.</span><span>ONCHAIN ACCESS / NON-CUSTODIAL CONTROL</span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
