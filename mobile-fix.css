@@ -1,1 +1,33 @@
-/* Mobile layout is consolidated in styles.css to keep spacing and responsive behavior consistent. */
+/* Mobile full-width hotfix */
+html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+*,*::before,*::after{box-sizing:border-box;min-width:0}
+img,svg,video,iframe{max-width:100%;height:auto}
+
+@media(max-width:900px){
+  body{width:100%!important;max-width:100%!important}
+  main,header,footer,section{max-width:100%!important}
+  .shell{width:calc(100% - 32px)!important;max-width:none!important;margin-left:16px!important;margin-right:16px!important}
+}
+
+@media(max-width:640px){
+  body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+  main{width:100%!important;max-width:100%!important;overflow:hidden!important}
+  .shell{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
+  .heroFocus{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important;padding:30px 0!important}
+  .heroCenter,.sectionHead,.problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout,.connectSteps,.connectCard,.securityGrid,.visionPanel,.visionGrid,.infoGrid,.faqList,.communityGrid,.foot,.copyright{width:100%!important;max-width:100%!important}
+  .problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout{display:block!important}
+  .problemGrid article,.valueCard,.identityCol,.flowNode,.connectSteps article,.connectCard{width:100%!important;max-width:100%!important}
+  .securityGrid,.visionGrid,.infoGrid,.communityGrid,.foot{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+  .signalGrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;width:100%!important}
+  .signalGrid>div{width:auto!important;min-width:0!important;padding:16px 12px!important}
+  .heroCenter h1,.sectionHead h2,.visionPanel h2,.final h2{max-width:100%!important;overflow-wrap:break-word!important;word-break:normal!important}
+  .heroActions{width:100%!important;display:flex!important;flex-direction:column!important}
+  .heroActions>a{width:100%!important;max-width:100%!important;justify-content:center!important}
+  .logoUniverse{width:210px!important;height:210px!important;max-width:75vw!important}
+  .flowArrow{height:34px!important;transform:rotate(90deg)!important}
+  .identityCol:first-child{border-right:0!important}
+  .walletFlow{width:100%!important;display:grid!important;grid-template-columns:1fr auto 1fr auto 1fr!important}
+  .walletFlow>div{min-width:0!important}
+  .final{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
+  .footBrand,.foot>div{grid-column:auto!important;width:100%!important}
+}
