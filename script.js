@@ -45,6 +45,10 @@ if (heroUniverse) {
     <span class="hudRing ring05"><i></i><b></b></span>
     <span class="hudRing ring06"><i></i><b></b></span>
 
+    <span class="particleCloud cloudA"></span>
+    <span class="particleCloud cloudB"></span>
+    <span class="particleCloud cloudC"></span>
+
     <span class="techGear gear1"></span>
     <span class="techGear gear2"></span>
     <span class="techGear gear3"></span>
@@ -60,6 +64,32 @@ if (heroUniverse) {
 
     <div class="logoCore hudLogoCore"><img src="/hoodbtc-logo.webp" alt=""></div>
   `;
+
+  const particleClouds = [
+    { selector: '.cloudA', count: 28, radius: 47, offset: 0 },
+    { selector: '.cloudB', count: 22, radius: 39, offset: 8 },
+    { selector: '.cloudC', count: 18, radius: 31, offset: 15 }
+  ];
+
+  particleClouds.forEach((config, layerIndex) => {
+    const cloud = heroUniverse.querySelector(config.selector);
+    if (!cloud) return;
+    for (let i = 0; i < config.count; i += 1) {
+      const dot = document.createElement('i');
+      const angle = ((360 / config.count) * i + config.offset + ((i % 3) - 1) * 1.8) * Math.PI / 180;
+      const jitter = ((i * 7 + layerIndex * 5) % 7) - 3;
+      const radius = config.radius + jitter * .45;
+      const x = 50 + Math.cos(angle) * radius;
+      const y = 50 + Math.sin(angle) * radius;
+      const size = 2 + ((i + layerIndex) % 4);
+      dot.style.left = `${x}%`;
+      dot.style.top = `${y}%`;
+      dot.style.width = `${size}px`;
+      dot.style.height = `${size}px`;
+      dot.style.animationDelay = `${((i * 0.037) + layerIndex * 0.11).toFixed(2)}s`;
+      cloud.appendChild(dot);
+    }
+  });
 }
 
 if (!document.getElementById('hoodbtc-reference-hud')) {
@@ -114,6 +144,12 @@ if (!document.getElementById('hoodbtc-reference-hud')) {
     .referenceHud .ring05{inset:30%;animation:spinCW 2.7s linear infinite}.referenceHud .ring05::before{opacity:.72;transform:rotate(73deg)}
     .referenceHud .ring06{inset:37%;animation:spinCCW 1.05s linear infinite}.referenceHud .ring06::before{opacity:.9;transform:rotate(101deg)}
 
+    .referenceHud .particleCloud{position:absolute;inset:0;border-radius:50%;z-index:5;pointer-events:none;will-change:transform;transform-origin:50% 50%}
+    .referenceHud .particleCloud i{position:absolute;display:block;border-radius:50%;background:#58ff7d;transform:translate(-50%,-50%);box-shadow:0 0 7px #4cf37a,0 0 15px rgba(76,243,122,.75),0 0 26px rgba(76,243,122,.28);animation:particleTwinkle .62s ease-in-out infinite alternate}
+    .referenceHud .cloudA{animation:spinCW 1.55s linear infinite}
+    .referenceHud .cloudB{animation:spinCCW 1.08s linear infinite}
+    .referenceHud .cloudC{animation:spinCW .82s linear infinite}
+
     .referenceHud .techGear{position:absolute;z-index:3;border-radius:50%;width:38px;height:38px;
       background:repeating-conic-gradient(#75ff91 0 4deg,#102516 4deg 10deg);
       -webkit-mask:radial-gradient(circle,transparent 0 28%,#000 30% 46%,transparent 48% 57%,#000 59% 100%);
@@ -123,7 +159,7 @@ if (!document.getElementById('hoodbtc-reference-hud')) {
     .referenceHud .gear1{left:8%;top:9%}.referenceHud .gear2{right:5%;top:16%;width:45px;height:45px;animation-direction:reverse;animation-duration:.72s}
     .referenceHud .gear3{left:2%;bottom:17%;width:34px;height:34px;animation-duration:1.05s}.referenceHud .gear4{right:11%;bottom:9%;width:29px;height:29px;animation-direction:reverse;animation-duration:.64s}
 
-    .referenceHud .hudNode{position:absolute;z-index:4;width:5px;height:5px;border-radius:50%;background:#4cf37a;box-shadow:0 0 9px #4cf37a,0 0 20px rgba(76,243,122,.5);animation:nodeBlink .72s ease-in-out infinite alternate}
+    .referenceHud .hudNode{position:absolute;z-index:6;width:5px;height:5px;border-radius:50%;background:#4cf37a;box-shadow:0 0 9px #4cf37a,0 0 20px rgba(76,243,122,.5);animation:nodeBlink .72s ease-in-out infinite alternate}
     .referenceHud .n1{left:17%;top:26%}.referenceHud .n2{right:14%;top:28%;animation-delay:.1s}.referenceHud .n3{left:9%;top:51%;animation-delay:.2s}.referenceHud .n4{right:7%;top:55%;animation-delay:.3s}
     .referenceHud .n5{left:25%;bottom:18%;animation-delay:.4s}.referenceHud .n6{right:24%;bottom:17%;animation-delay:.5s}.referenceHud .n7{left:47%;top:4%;animation-delay:.6s}.referenceHud .n8{right:46%;bottom:4%;animation-delay:.7s}
 
@@ -146,6 +182,7 @@ if (!document.getElementById('hoodbtc-reference-hud')) {
     @keyframes hudBreath{0%,100%{opacity:.72;transform:scale(.985)}50%{opacity:1;transform:scale(1.025)}}
     @keyframes platformPulse{0%,100%{opacity:.45;transform:scaleX(.94)}50%{opacity:.9;transform:scaleX(1.05)}}
     @keyframes nodeBlink{from{opacity:.35;transform:scale(.8)}to{opacity:1;transform:scale(1.45)}}
+    @keyframes particleTwinkle{from{opacity:.45;filter:brightness(.9)}to{opacity:1;filter:brightness(1.4)}}
 
     @media(max-width:900px){
       body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
@@ -168,7 +205,7 @@ if (!document.getElementById('hoodbtc-reference-hud')) {
       .heroCenter h1{font-size:44px!important;max-width:370px!important}.heroLead{font-size:13.5px!important;max-width:350px!important}
     }
     @media(prefers-reduced-motion:reduce){
-      .referenceHud .hudRing,.referenceHud .techGear,.referenceHud .platformDisc,.referenceHud .hudNode,.referenceHud .hudLogoCore,.referenceHud::before,.referenceHud::after{animation:none!important}
+      .referenceHud .hudRing,.referenceHud .particleCloud,.referenceHud .particleCloud i,.referenceHud .techGear,.referenceHud .platformDisc,.referenceHud .hudNode,.referenceHud .hudLogoCore,.referenceHud::before,.referenceHud::after{animation:none!important}
     }
   `;
   document.head.appendChild(style);
