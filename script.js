@@ -240,3 +240,19 @@ if (heroUniverse) {
     document.head.appendChild(heroStyle);
   }
 }
+
+/* Never cover the hero buttons with the sticky mobile Trade CTA. */
+const mobileCta = document.querySelector('.mobileCta');
+const heroSection = document.querySelector('.heroFocus');
+
+function updateMobileCtaVisibility() {
+  if (!mobileCta || !heroSection) return;
+  const shouldShow = window.innerWidth <= 640 && heroSection.getBoundingClientRect().bottom < 120;
+  mobileCta.style.display = shouldShow ? 'block' : 'none';
+}
+
+if (mobileCta && heroSection) {
+  updateMobileCtaVisibility();
+  window.addEventListener('scroll', updateMobileCtaVisibility, { passive: true });
+  window.addEventListener('resize', updateMobileCtaVisibility);
+}
