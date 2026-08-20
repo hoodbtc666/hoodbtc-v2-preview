@@ -31,3 +31,13 @@ img,svg,video,iframe{max-width:100%;height:auto}
   .final{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
   .footBrand,.foot>div{grid-column:auto!important;width:100%!important}
 }
+
+/* Hero logo + orbit tuning */
+.logoCore{overflow:hidden!important;padding:0!important;display:grid!important;place-items:center!important;animation:hoodLogoSlow 9s ease-in-out infinite!important;transform-origin:center center!important}
+.logoCore img{width:128%!important;height:128%!important;max-width:none!important;object-fit:cover!important;object-position:center!important;border-radius:50%!important;margin:0!important;display:block!important}
+@keyframes hoodLogoSlow{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.025) rotate(2deg)}}
+
+.orbitA{animation-duration:2.8s!important;background-image:radial-gradient(circle at 50% 1%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 69% 5%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 84% 16%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 95% 32%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 99% 50%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 94% 68%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 82% 85%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 66% 96%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 48% 99%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 30% 95%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 15% 84%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 5% 66%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 1% 48%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 6% 30%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 18% 14%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 34% 4%,#4cf37a 0 2.5px,transparent 3.5px)!important}
+.orbitB{animation-duration:4.2s!important}.orbitC{animation-duration:6s!important}
+.orbit i{width:9px!important;height:9px!important;box-shadow:0 0 20px var(--green)!important}
+.spark{animation-duration:1.6s!important}
