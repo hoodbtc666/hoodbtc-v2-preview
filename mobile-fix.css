@@ -3,86 +3,56 @@ html,body{width:100%;max-width:100%;overflow-x:hidden!important}
 *,*::before,*::after{box-sizing:border-box;min-width:0}
 img,svg,video,iframe{max-width:100%;height:auto}
 
-@media(max-width:900px){
-  body{width:100%!important;max-width:100%!important}
-  main,header,footer,section{max-width:100%!important}
-  .shell{width:calc(100% - 32px)!important;max-width:none!important;margin-left:16px!important;margin-right:16px!important}
-}
+@media(max-width:900px){body{width:100%!important;max-width:100%!important}main,header,footer,section{max-width:100%!important}.shell{width:calc(100% - 32px)!important;max-width:none!important;margin-left:16px!important;margin-right:16px!important}}
 
-@media(max-width:640px){
-  body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
-  main{width:100%!important;max-width:100%!important;overflow:hidden!important}
-  .shell{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
-  .heroFocus{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important;padding:24px 0 28px!important}
-  .heroCenter,.sectionHead,.problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout,.connectSteps,.connectCard,.securityGrid,.visionPanel,.visionGrid,.infoGrid,.faqList,.communityGrid,.foot,.copyright{width:100%!important;max-width:100%!important}
-  .problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout{display:block!important}
-  .problemGrid article,.valueCard,.identityCol,.flowNode,.connectSteps article,.connectCard{width:100%!important;max-width:100%!important}
-  .securityGrid,.visionGrid,.infoGrid,.communityGrid,.foot{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
-  .signalGrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;width:100%!important}
-  .signalGrid>div{width:auto!important;min-width:0!important;padding:16px 12px!important}
-  .heroCenter h1,.sectionHead h2,.visionPanel h2,.final h2{max-width:100%!important;overflow-wrap:break-word!important;word-break:normal!important}
-  .heroCenter h1{font-size:52px!important;line-height:.96!important;letter-spacing:-3.4px!important;margin:0 auto 20px!important;max-width:365px!important}
-  .heroLead{font-size:15px!important;line-height:1.62!important;max-width:365px!important}
-  .status{font-size:9px!important;letter-spacing:3px!important;margin-bottom:4px!important}
-  .heroEyebrow{font-size:7.5px!important;letter-spacing:2.4px!important;margin:5px 0 14px!important}
-  .heroActions{width:100%!important;display:flex!important;flex-direction:column!important;gap:10px!important;margin-top:24px!important}
-  .heroActions>a{width:100%!important;max-width:100%!important;justify-content:center!important;padding:15px 18px!important;font-size:15px!important}
-  .heroActions .ghost:last-child{background:var(--green)!important;color:#041008!important;border-color:var(--green)!important}
-  .trustLine{margin-top:22px!important;font-size:6.6px!important;letter-spacing:.7px!important;gap:8px!important;white-space:nowrap!important;flex-wrap:nowrap!important}
-  .logoUniverse{width:330px!important;height:330px!important;max-width:88vw!important;margin:8px auto 0!important}
-  .logoCore{width:162px!important;height:162px!important}
-  .orbitA{inset:56px!important}
-  .orbitB{inset:26px!important}
-  .orbitC{inset:2px!important}
-  .flowArrow{height:34px!important;transform:rotate(90deg)!important}
-  .identityCol:first-child{border-right:0!important}
-  .walletFlow{width:100%!important;display:grid!important;grid-template-columns:1fr auto 1fr auto 1fr!important}
-  .walletFlow>div{min-width:0!important}
-  .final{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
-  .footBrand,.foot>div{grid-column:auto!important;width:100%!important}
-}
-
-/* Hero logo: fixed, circular, centered and edge-to-edge */
-.logoCore{overflow:hidden!important;padding:0!important;display:grid!important;place-items:center!important;animation:none!important;transform:none!important;border-radius:50%!important;background:#020403!important;border:2px solid rgba(132,255,0,.7)!important;box-shadow:0 0 42px rgba(92,255,0,.26)!important}
+/* Keep hero mark fixed, circular and centered */
+.logoCore{overflow:hidden!important;padding:0!important;display:grid!important;place-items:center!important;animation:none!important;transform:none!important;border-radius:50%!important;background:#020403!important;border:2px solid rgba(132,255,0,.7)!important;box-shadow:0 0 34px rgba(92,255,0,.25)!important}
 .logoCore img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:50% 50%!important;border-radius:50%!important;clip-path:circle(50% at 50% 50%)!important;margin:0!important;display:block!important;animation:none!important;transform:none!important}
+.orbit{border-color:rgba(76,243,122,.28)!important}
+.orbitA{animation-duration:1.3s!important}.orbitB{animation-duration:1.75s!important}.orbitC{animation-duration:2.2s!important}.spark{animation-duration:.75s!important}
 
-/* Dense fast orbit field like reference */
-.orbit{border-color:rgba(76,243,122,.26)!important}
-.orbitA{animation-duration:1.35s!important;background-image:radial-gradient(circle at 50% 1%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 61% 2%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 71% 6%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 81% 12%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 89% 21%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 95% 32%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 99% 44%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 98% 57%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 94% 69%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 87% 80%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 77% 89%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 65% 96%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 52% 99%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 39% 98%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 27% 93%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 17% 85%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 9% 75%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 3% 63%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 1% 50%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 3% 37%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 9% 25%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 18% 15%,#4cf37a 0 3px,transparent 4px),radial-gradient(circle at 29% 7%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 40% 2%,#4cf37a 0 2.5px,transparent 3.5px)!important}
-.orbitB{animation-duration:1.85s!important;background-image:radial-gradient(circle at 50% 0%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 75% 7%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 93% 25%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 100% 50%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 92% 76%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 74% 94%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 48% 100%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 24% 93%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 7% 74%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 0% 49%,#4cf37a 0 2.5px,transparent 3.5px),radial-gradient(circle at 8% 24%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 27% 6%,#4cf37a 0 2.5px,transparent 3.5px)!important}
-.orbitC{animation-duration:2.4s!important;background-image:radial-gradient(circle at 50% 0%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 85% 14%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 100% 50%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 85% 86%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 50% 100%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 15% 86%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 0% 50%,#4cf37a 0 2px,transparent 3px),radial-gradient(circle at 15% 14%,#4cf37a 0 2px,transparent 3px)!important}
-.orbit i{width:8px!important;height:8px!important;box-shadow:0 0 18px var(--green)!important}
-.spark{width:5px!important;height:5px!important;animation-duration:.8s!important}
-
-/* FINAL MOBILE MATCH — approved screenshot */
 @media(max-width:640px){
-  .topbar{height:74px!important;background:#020403!important;border-bottom:1px solid #102418!important;backdrop-filter:none!important}
-  .nav{height:74px!important;padding:0 2px!important}
-  .brand{gap:9px!important;font-size:18px!important;letter-spacing:-.8px!important}
-  .brand img{width:42px!important;height:42px!important}
-  .menu-btn{font-size:27px!important;line-height:1!important;padding:4px 0 4px 10px!important}
+ body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+ main{width:100%!important;max-width:100%!important;overflow:hidden!important}
+ .shell{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
+ .topbar{height:64px!important;background:#020403!important;border-bottom:1px solid #102418!important;backdrop-filter:none!important}
+ .nav{height:64px!important;padding:0!important}
+ .brand{gap:8px!important;font-size:16px!important;letter-spacing:-.7px!important}
+ .brand img{width:36px!important;height:36px!important}
+ .menu-btn{font-size:24px!important;line-height:1!important;padding:4px 0 4px 10px!important}
 
-  .heroFocus{padding:24px 0 22px!important;min-height:0!important}
-  .heroCenter{max-width:390px!important;margin:0 auto!important}
-  .status{display:block!important;margin:0 0 4px!important;font-size:9px!important;letter-spacing:3.2px!important;line-height:1.2!important}
-  .status i{width:8px!important;height:8px!important;margin-right:10px!important}
+ .heroFocus{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important;padding:22px 0 18px!important;min-height:0!important}
+ .heroCenter{width:100%!important;max-width:390px!important;margin:0 auto!important}
+ .status{display:block!important;margin:0 0 2px!important;font-size:8.5px!important;letter-spacing:3px!important;line-height:1.2!important}
+ .status i{width:7px!important;height:7px!important;margin-right:9px!important}
 
-  .logoUniverse{width:342px!important;height:342px!important;max-width:92vw!important;margin:0 auto -2px!important}
-  .logoCore{width:166px!important;height:166px!important;border-width:2px!important;box-shadow:0 0 45px rgba(105,255,0,.28)!important}
-  .orbitA{inset:57px!important}
-  .orbitB{inset:27px!important}
-  .orbitC{inset:3px!important}
+ /* Approved reference proportions: compact universe, logo about half its diameter */
+ .logoUniverse{width:292px!important;height:292px!important;max-width:78vw!important;margin:0 auto -1px!important;overflow:visible!important}
+ .logoCore{width:136px!important;height:136px!important;border-width:2px!important;box-shadow:0 0 34px rgba(105,255,0,.27)!important}
+ .orbitA{inset:48px!important}
+ .orbitB{inset:23px!important}
+ .orbitC{inset:2px!important}
+ .orbit i{width:5px!important;height:5px!important;box-shadow:0 0 12px var(--green)!important}
+ .spark{width:4px!important;height:4px!important}
 
-  .heroEyebrow{margin:0 0 14px!important;font-size:7.4px!important;letter-spacing:2.25px!important;line-height:1.15!important;color:#6f7b73!important}
-  .heroCenter h1{font-size:51px!important;line-height:.94!important;letter-spacing:-3.8px!important;max-width:380px!important;margin:0 auto 18px!important}
-  .heroLead{font-size:15px!important;line-height:1.58!important;max-width:365px!important;color:#8f9992!important}
+ .heroEyebrow{margin:0 0 12px!important;font-size:6.7px!important;letter-spacing:2.05px!important;line-height:1.1!important;color:#6f7b73!important}
+ .heroCenter h1{font-size:43px!important;line-height:.96!important;letter-spacing:-3.1px!important;max-width:360px!important;margin:0 auto 17px!important;overflow-wrap:normal!important;word-break:normal!important}
+ .heroLead{font-size:13.5px!important;line-height:1.55!important;max-width:340px!important;color:#8f9992!important;margin-left:auto!important;margin-right:auto!important}
 
-  .heroActions{gap:10px!important;margin-top:22px!important}
-  .heroActions>a{height:58px!important;padding:0 18px!important;border-radius:999px!important;font-size:15px!important;font-weight:800!important}
-  .heroActions .mainTrade{background:var(--green)!important;color:#041008!important;border:1px solid var(--green)!important}
-  .heroActions .ghost{background:#030604!important;color:#f5f7f5!important;border:1px solid #334039!important}
-  .heroActions .ghost:last-child{background:var(--green)!important;color:#041008!important;border-color:var(--green)!important}
+ .heroActions{width:100%!important;display:flex!important;flex-direction:column!important;gap:9px!important;margin-top:20px!important}
+ .heroActions>a{width:100%!important;max-width:100%!important;height:52px!important;padding:0 16px!important;border-radius:999px!important;justify-content:center!important;font-size:14px!important;font-weight:800!important}
+ .heroActions .mainTrade{background:var(--green)!important;color:#041008!important;border:1px solid var(--green)!important}
+ .heroActions .ghost{background:#030604!important;color:#f5f7f5!important;border:1px solid #334039!important}
+ .heroActions .ghost:last-child{background:var(--green)!important;color:#041008!important;border-color:var(--green)!important}
+ .trustLine{margin-top:18px!important;padding-bottom:0!important;font-size:5.8px!important;letter-spacing:.48px!important;gap:6px!important;color:#59625c!important;justify-content:center!important;white-space:nowrap!important;flex-wrap:nowrap!important}
+ .trustLine i{width:3px!important;height:3px!important;flex:0 0 3px!important}
 
-  .trustLine{margin-top:20px!important;padding-bottom:2px!important;font-size:6.2px!important;letter-spacing:.55px!important;gap:7px!important;color:#59625c!important;justify-content:center!important}
-  .trustLine i{width:3px!important;height:3px!important;flex:0 0 3px!important}
+ .heroCenter,.sectionHead,.problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout,.connectSteps,.connectCard,.securityGrid,.visionPanel,.visionGrid,.infoGrid,.faqList,.communityGrid,.foot,.copyright{width:100%!important;max-width:100%!important}
+ .problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout{display:block!important}
+ .problemGrid article,.valueCard,.identityCol,.flowNode,.connectSteps article,.connectCard{width:100%!important;max-width:100%!important}
+ .securityGrid,.visionGrid,.infoGrid,.communityGrid,.foot{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+ .signalGrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;width:100%!important}
+ .flowArrow{height:34px!important;transform:rotate(90deg)!important}
+ .identityCol:first-child{border-right:0!important}
+ .final{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
 }
