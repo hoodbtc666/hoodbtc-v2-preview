@@ -1,56 +1,57 @@
-/* Mobile full-width hotfix */
+/* HOODBTC responsive hero fix */
 html,body{width:100%;max-width:100%;overflow-x:hidden!important}
 *,*::before,*::after{box-sizing:border-box;min-width:0}
 img,svg,video,iframe{max-width:100%;height:auto}
 
-@media(max-width:900px){body{width:100%!important;max-width:100%!important}main,header,footer,section{max-width:100%!important}.shell{width:calc(100% - 32px)!important;max-width:none!important;margin-left:16px!important;margin-right:16px!important}}
+/* The user's iPhone browser is resolving wider than 640 CSS px, so the approved
+   mobile hero must apply through the same breakpoint that already shows mobile nav. */
+@media(max-width:900px){
+  body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+  main,header,footer,section{max-width:100%!important}
+  .shell{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
 
-.logoCore{overflow:hidden!important;padding:0!important;display:grid!important;place-items:center!important;animation:none!important;transform:none!important;border-radius:50%!important;background:#020403!important;border:2px solid rgba(132,255,0,.7)!important;box-shadow:0 0 30px rgba(92,255,0,.24)!important}
-.logoCore img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:50% 50%!important;border-radius:50%!important;clip-path:circle(50% at 50% 50%)!important;margin:0!important;display:block!important;animation:none!important;transform:none!important}
-.orbit{border-color:rgba(76,243,122,.28)!important}
-.orbitA{animation-duration:1.2s!important}.orbitB{animation-duration:1.55s!important}.orbitC{animation-duration:1.95s!important}.spark{animation-duration:.7s!important}
+  .topbar{height:72px!important;background:#020403!important;border-bottom:1px solid #102418!important;backdrop-filter:none!important}
+  .nav{height:72px!important;padding:0!important}
+  .brand{gap:9px!important;font-size:18px!important;letter-spacing:-.8px!important}
+  .brand img{width:42px!important;height:42px!important}
+  .menu-btn{display:block!important;margin-left:auto!important;font-size:28px!important;line-height:1!important;padding:3px 0 3px 10px!important}
 
-@media(max-width:640px){
- body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
- main{width:100%!important;max-width:100%!important;overflow:hidden!important}
- .shell{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
- .topbar{height:58px!important;background:#020403!important;border-bottom:1px solid #102418!important;backdrop-filter:none!important}
- .nav{height:58px!important;padding:0!important}
- .brand{gap:7px!important;font-size:15px!important;letter-spacing:-.6px!important}
- .brand img{width:32px!important;height:32px!important}
- .menu-btn{font-size:22px!important;line-height:1!important;padding:4px 0 4px 10px!important}
+  .heroFocus{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important;padding:24px 0 22px!important;min-height:0!important}
+  .heroCenter{width:100%!important;max-width:430px!important;margin:0 auto!important;text-align:center!important}
+  .status{display:block!important;margin:0 0 3px!important;font-size:9px!important;letter-spacing:3.15px!important;line-height:1.2!important}
+  .status i{width:8px!important;height:8px!important;margin-right:10px!important}
 
- .heroFocus{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important;padding:18px 0 16px!important;min-height:0!important}
- .heroCenter{width:100%!important;max-width:370px!important;margin:0 auto!important}
- .status{display:block!important;margin:0 0 2px!important;font-size:7.8px!important;letter-spacing:2.7px!important;line-height:1.15!important}
- .status i{width:6px!important;height:6px!important;margin-right:8px!important}
+  .logoUniverse{width:330px!important;height:330px!important;max-width:82vw!important;margin:0 auto -1px!important;position:relative!important;display:grid!important;place-items:center!important;overflow:visible!important}
+  .logoCore{width:158px!important;height:158px!important;overflow:hidden!important;padding:0!important;display:grid!important;place-items:center!important;animation:none!important;transform:none!important;border-radius:50%!important;background:#020403!important;border:2px solid rgba(132,255,0,.72)!important;box-shadow:0 0 40px rgba(92,255,0,.27)!important}
+  .logoCore img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center!important;border-radius:50%!important;clip-path:circle(50% at 50% 50%)!important;margin:0!important;display:block!important;animation:none!important;transform:none!important}
 
- .logoUniverse{width:224px!important;height:224px!important;max-width:64vw!important;margin:0 auto -1px!important;overflow:visible!important}
- .logoCore{width:104px!important;height:104px!important;border-width:2px!important;box-shadow:0 0 28px rgba(105,255,0,.26)!important}
- .orbitA{inset:37px!important}
- .orbitB{inset:18px!important}
- .orbitC{inset:2px!important}
- .orbit i{width:4px!important;height:4px!important;box-shadow:0 0 10px var(--green)!important}
- .spark{width:3px!important;height:3px!important}
+  .orbit{border-color:rgba(76,243,122,.28)!important}
+  .orbitA{inset:55px!important;animation-duration:1.3s!important}
+  .orbitB{inset:26px!important;animation-duration:1.8s!important}
+  .orbitC{inset:2px!important;animation-duration:2.35s!important}
+  .orbit i{width:7px!important;height:7px!important;box-shadow:0 0 16px var(--green)!important}
+  .spark{width:4px!important;height:4px!important;animation-duration:.8s!important}
 
- .heroEyebrow{margin:0 0 10px!important;font-size:6.1px!important;letter-spacing:1.8px!important;line-height:1.1!important;color:#6f7b73!important}
- .heroCenter h1{font-size:34px!important;line-height:.98!important;letter-spacing:-2.3px!important;max-width:340px!important;margin:0 auto 14px!important;overflow-wrap:normal!important;word-break:normal!important}
- .heroLead{font-size:11.8px!important;line-height:1.52!important;max-width:315px!important;color:#8f9992!important;margin-left:auto!important;margin-right:auto!important}
+  .heroEyebrow{margin:0 0 14px!important;font-size:7.3px!important;letter-spacing:2.25px!important;line-height:1.15!important;color:#6f7b73!important}
+  .heroCenter h1{font-size:48px!important;line-height:.95!important;letter-spacing:-3.5px!important;max-width:410px!important;margin:0 auto 18px!important;overflow-wrap:normal!important;word-break:normal!important}
+  .heroLead{font-size:14px!important;line-height:1.58!important;max-width:370px!important;color:#8f9992!important;margin-left:auto!important;margin-right:auto!important}
 
- .heroActions{width:100%!important;display:flex!important;flex-direction:column!important;gap:8px!important;margin-top:17px!important}
- .heroActions>a{width:100%!important;max-width:100%!important;height:44px!important;padding:0 14px!important;border-radius:999px!important;justify-content:center!important;font-size:12.5px!important;font-weight:800!important}
- .heroActions .mainTrade{background:var(--green)!important;color:#041008!important;border:1px solid var(--green)!important}
- .heroActions .ghost{background:#030604!important;color:#f5f7f5!important;border:1px solid #334039!important}
- .heroActions .ghost:last-child{background:var(--green)!important;color:#041008!important;border-color:var(--green)!important}
- .trustLine{margin-top:15px!important;padding-bottom:0!important;font-size:5.2px!important;letter-spacing:.4px!important;gap:5px!important;color:#59625c!important;justify-content:center!important;white-space:nowrap!important;flex-wrap:nowrap!important}
- .trustLine i{width:3px!important;height:3px!important;flex:0 0 3px!important}
+  .heroActions{width:100%!important;display:flex!important;flex-direction:column!important;gap:10px!important;margin-top:22px!important}
+  .heroActions>a{width:100%!important;max-width:100%!important;height:56px!important;padding:0 18px!important;border-radius:999px!important;justify-content:center!important;font-size:15px!important;font-weight:800!important}
+  .heroActions .mainTrade{background:var(--green)!important;color:#041008!important;border:1px solid var(--green)!important}
+  .heroActions .ghost{background:#030604!important;color:#f5f7f5!important;border:1px solid #334039!important}
+  .heroActions .ghost:last-child{background:var(--green)!important;color:#041008!important;border-color:var(--green)!important}
 
- .heroCenter,.sectionHead,.problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout,.connectSteps,.connectCard,.securityGrid,.visionPanel,.visionGrid,.infoGrid,.faqList,.communityGrid,.foot,.copyright{width:100%!important;max-width:100%!important}
- .problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout{display:block!important}
- .problemGrid article,.valueCard,.identityCol,.flowNode,.connectSteps article,.connectCard{width:100%!important;max-width:100%!important}
- .securityGrid,.visionGrid,.infoGrid,.communityGrid,.foot{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
- .signalGrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;width:100%!important}
- .flowArrow{height:34px!important;transform:rotate(90deg)!important}
- .identityCol:first-child{border-right:0!important}
- .final{width:calc(100% - 28px)!important;max-width:none!important;margin-left:14px!important;margin-right:14px!important}
+  .trustLine{margin-top:20px!important;padding-bottom:2px!important;font-size:6.2px!important;letter-spacing:.52px!important;gap:7px!important;color:#59625c!important;justify-content:center!important;white-space:nowrap!important;flex-wrap:nowrap!important}
+  .trustLine i{width:3px!important;height:3px!important;flex:0 0 3px!important}
+
+  .heroCenter,.sectionHead,.problemGrid,.valueGrid,.identityWrap,.flowDiagram,.connectLayout,.connectSteps,.connectCard,.securityGrid,.visionPanel,.visionGrid,.infoGrid,.faqList,.communityGrid,.foot,.copyright{width:100%!important;max-width:100%!important}
+}
+
+@media(max-width:430px){
+  .logoUniverse{width:300px!important;height:300px!important;max-width:84vw!important}
+  .logoCore{width:144px!important;height:144px!important}
+  .orbitA{inset:50px!important}.orbitB{inset:24px!important}.orbitC{inset:2px!important}
+  .heroCenter h1{font-size:44px!important;max-width:370px!important}
+  .heroLead{font-size:13.5px!important;max-width:350px!important}
 }
