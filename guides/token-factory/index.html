@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>How to Create a Token — HOODBTC Token Factory Guide</title>
+  <meta name="description" content="Learn how to use HOODBTC Token Factory step by step: choose a network, connect a wallet, configure token name, symbol, supply, decimals and metadata, review permissions, deploy, and verify the token onchain.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#050706">
+  <link rel="canonical" href="https://hoodbtc.com/guides/token-factory/">
+  <link rel="icon" href="/hoodbtc-logo.png">
+  <link rel="apple-touch-icon" href="/hoodbtc-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/polish.css">
+  <link rel="stylesheet" href="/seo.css">
+  <link rel="stylesheet" href="/guide.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="HOODBTC">
+  <meta property="og:title" content="How to Create a Token — HOODBTC Token Factory Guide">
+  <meta property="og:description" content="A practical guide to configuring, reviewing and deploying a token from your own wallet with HOODBTC Token Factory.">
+  <meta property="og:url" content="https://hoodbtc.com/guides/token-factory/">
+  <meta property="og:image" content="https://hoodbtc.com/IMG_8612.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://hoodbtc.com/IMG_8612.jpeg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOODBTC","item":"https://hoodbtc.com/"},{"@type":"ListItem","position":2,"name":"Token Factory","item":"https://hoodbtc.com/token-factory/"},{"@type":"ListItem","position":3,"name":"How to Create a Token","item":"https://hoodbtc.com/guides/token-factory/"}]}
+  </script>
+</head>
+<body class="hoodbtcPolished">
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="/" aria-label="HOODBTC home"><img src="/hoodbtc-logo.png" alt="HOODBTC logo"><span>HOOD<b>BTC</b></span></a>
+      <nav class="links" aria-label="Primary navigation"><a href="/">Home</a><a href="/dex-trading/">DEX Trading</a><a href="/guides/trade/">Trade Guide</a><a href="/token-factory/">Token Factory</a><a href="/guides/token-factory/">Token Guide</a></nav>
+      <a class="navBtn" href="https://tokenfactory.hoodbtc.com" target="_blank" rel="noopener noreferrer">Create Token ↗</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="heroFocus shell ecosystemHero guideHero">
+      <div class="heroCenter">
+        <div class="status"><i></i> TOKEN FACTORY GUIDE</div>
+        <p class="heroEyebrow">STEP-BY-STEP / SELF-CUSTODIAL DEPLOYMENT</p>
+        <h1>Configure. Review. <em>Deploy onchain.</em></h1>
+        <p class="heroLead">HOODBTC Token Factory helps you create a standard token from your own wallet without manually building the full deployment workflow. This guide explains what each stage means so you can make deliberate choices before signing the final blockchain transaction.</p>
+        <div class="heroActions"><a class="primary mainTrade" href="https://tokenfactory.hoodbtc.com" target="_blank" rel="noopener noreferrer">Open Token Factory ↗</a><a class="ghost" href="#steps">Start the Guide ↓</a><a class="ghost productAction" href="/token-factory/">Token Factory Overview →</a></div>
+      </div>
+    </section>
+
+    <section class="signalStrip" aria-label="Token guide overview"><div class="shell signalGrid"><div><small>STEP 01</small><b>Choose Network</b></div><div><small>STEP 02</small><b>Configure Token</b></div><div><small>STEP 03</small><b>Review Permissions</b></div><div><small>STEP 04</small><b>Deploy & Verify</b></div></div></section>
+
+    <section class="problemSection shell">
+      <div class="sectionHead"><span>BEFORE YOU CREATE</span><h2>Decide the token design before opening the form.</h2><p>A token can be deployed quickly, but the choices can matter permanently. Prepare the name, symbol, supply model, decimals, metadata and authority settings before you sign.</p></div>
+      <div class="guideChecklist">
+        <article><small>NETWORK</small><h3>Choose the right chain</h3><p>Decide where the token should live. Token Factory supports Solana and selected EVM networks, and each network has its own fees, wallets and token standards.</p></article>
+        <article><small>ECONOMICS</small><h3>Plan supply and decimals</h3><p>Know the intended initial supply and how divisible the token should be before deployment. Do not enter random values just to continue.</p></article>
+        <article><small>AUTHORITY</small><h3>Understand control settings</h3><p>Mint, freeze, ownership or other authority options can change who can control the token later. Review exactly what the selected network and form support.</p></article>
+      </div>
+    </section>
+
+    <section class="howSection shell" id="steps">
+      <div class="sectionHead"><span>HOW TO USE TOKEN FACTORY</span><h2>Create a token in eight clear steps.</h2><p>The exact wallet prompts differ by blockchain, but the decision flow stays similar: choose the chain, configure the token, review control settings, sign and verify.</p></div>
+      <div class="guideSteps">
+        <article class="guideStep"><span>01 / OPEN</span><b class="guideNumber">01</b><h3>Open the official Token Factory</h3><p>Use <strong>tokenfactory.hoodbtc.com</strong>. Confirm the domain before connecting a wallet or approving any transaction.</p></article>
+        <article class="guideStep"><span>02 / NETWORK</span><b class="guideNumber">02</b><h3>Select the blockchain</h3><p>Choose Solana or a supported EVM network such as Ethereum, BNB Chain, Base, Arbitrum One, Polygon, Avalanche C-Chain or Optimism when available in the live product.</p></article>
+        <article class="guideStep"><span>03 / WALLET</span><b class="guideNumber">03</b><h3>Connect a compatible wallet</h3><p>Select the wallet you want to use for deployment. Keep enough of the required network asset or supported payment asset available for blockchain costs and any applicable service fee shown by the live interface.</p></article>
+        <article class="guideStep"><span>04 / IDENTITY</span><b class="guideNumber">04</b><h3>Enter name and symbol</h3><p>Choose the token name users will see and its short ticker or symbol. Check spelling and capitalization because changing token identity later may be difficult or impossible depending on the chain and metadata standard.</p></article>
+        <article class="guideStep"><span>05 / SUPPLY</span><b class="guideNumber">05</b><h3>Set supply and decimals</h3><p>Enter the initial supply and supported decimal precision. Supply defines how many units are created initially; decimals determine how finely one token can be divided in wallets and applications.</p></article>
+        <article class="guideStep"><span>06 / METADATA</span><b class="guideNumber">06</b><h3>Add supported metadata</h3><p>Where supported, add a logo, description, website or social links. Use official project information and verify every URL before publishing it as token metadata.</p></article>
+        <article class="guideStep"><span>07 / PERMISSIONS</span><b class="guideNumber">07</b><h3>Review authorities and ownership</h3><p>Study each available authority option before deployment. If an option can mint more supply, freeze accounts, update metadata or control ownership, understand whether you want to retain, transfer or revoke that capability.</p></article>
+        <article class="guideStep"><span>08 / DEPLOY</span><b class="guideNumber">08</b><h3>Review, sign and verify</h3><p>Confirm the network, token settings, costs and wallet address. Approve the requested transaction only if everything matches. After confirmation, use the provided transaction or explorer link to verify the token onchain.</p></article>
+      </div>
+      <div class="guideCallout"><small>IMPORTANT</small><div><h3>Creating a token does not create a market.</h3><p>Deployment creates the token contract or token asset on the selected blockchain. It does <strong>not</strong> automatically list the token on HOODBTC Trade, create a liquidity pool, guarantee a price, create buyers or make the token tradable everywhere.</p></div></div>
+    </section>
+
+    <section class="valueSection shell">
+      <div class="sectionHead"><span>WHAT THE FIELDS MEAN</span><h2>Understand the settings before you sign.</h2><p>These are the decisions most token creators should understand rather than treating them as simple form fields.</p></div>
+      <div class="guideChecklist">
+        <article><small>NAME + SYMBOL</small><h3>Token identity</h3><p>The readable project name and ticker shown by compatible wallets, explorers and applications.</p></article>
+        <article><small>SUPPLY</small><h3>Initial quantity</h3><p>The number of token units created at deployment, subject to the selected token standard and authority configuration.</p></article>
+        <article><small>DECIMALS</small><h3>Divisibility</h3><p>Decimals control how small a fraction of one token can be represented. They do not increase the economic value of the token.</p></article>
+        <article><small>MINT AUTHORITY</small><h3>Future supply control</h3><p>If supported and retained, mint authority can allow additional tokens to be created later. Revoking it can make future minting unavailable.</p></article>
+        <article><small>FREEZE / CONTROL</small><h3>Account restrictions</h3><p>Some standards can include authorities that affect token accounts or administrative control. Availability and behavior vary by network.</p></article>
+        <article><small>METADATA</small><h3>Public token information</h3><p>Logo, description and project links help identify a token, but metadata does not prove legitimacy or create market value.</p></article>
+      </div>
+    </section>
+
+    <section class="identitySection shell">
+      <div class="sectionHead"><span>AFTER DEPLOYMENT</span><h2>Your work is not finished when the transaction confirms.</h2></div>
+      <div class="identityWrap">
+        <div class="identityCol"><small>VERIFY</small><h3>Confirm the onchain result.</h3><div class="identityRow"><small>ADDRESS</small><b>Save the token address</b><p>Record the official mint or contract address. This is more reliable than identifying a token only by name or ticker.</p></div><div class="identityRow"><small>EXPLORER</small><b>Inspect the transaction</b><p>Use a compatible blockchain explorer to verify supply, token address, transaction and visible authority state.</p></div><div class="identityRow"><small>METADATA</small><b>Check public information</b><p>Confirm logo and project links display as expected where supported.</p></div></div>
+        <div class="identityCol"><small>NEXT STEPS</small><h3>Decide what happens next.</h3><div class="identityRow"><small>DISTRIBUTION</small><b>Plan token allocation</b><p>Deployment alone does not decide how tokens should be distributed or managed.</p></div><div class="identityRow"><small>LIQUIDITY</small><b>Trading requires separate liquidity</b><p>A token needs a separate market or liquidity arrangement before users can trade it on a compatible venue.</p></div><div class="identityRow"><small>LEGAL</small><b>Consider your obligations</b><p>Token distribution, fundraising, marketing and promises can create legal or regulatory obligations depending on jurisdiction and design.</p></div></div>
+      </div>
+      <p class="guideWarning">Never publish a seed phrase, private key or recovery phrase. If a website, message or person asks for one, stop. Wallet approval is enough for legitimate Token Factory deployment flows.</p>
+    </section>
+
+    <section class="faqSection shell">
+      <div class="sectionHead"><span>TOKEN GUIDE FAQ</span><h2>Common questions before and after deployment.</h2></div>
+      <div class="faqList">
+        <details><summary>Does Token Factory keep my private key?<span>+</span></summary><p>No. The product is designed around wallet-based approval. Never enter your seed phrase or private key into the Token Factory or send it to anyone claiming to provide support.</p></details>
+        <details><summary>Can I create a fixed-supply token?<span>+</span></summary><p>A fixed-supply design generally requires choosing the intended initial supply and ensuring no authority remains that can create additional supply. The exact authority options and terminology vary by blockchain, so review the live settings before deployment.</p></details>
+        <details><summary>Does creating a token list it on HOODBTC Trade?<span>+</span></summary><p>No. HOODBTC Token Factory and HOODBTC Trade are separate products in the same ecosystem. Token creation does not automatically create a market, liquidity or listing on the trading product.</p></details>
+        <details><summary>Why do I need network fees?<span>+</span></summary><p>Blockchain deployment consumes network resources and requires transaction fees. The live interface can also show an applicable HOODBTC service fee separately where configured.</p></details>
+        <details><summary>Can token settings be changed after deployment?<span>+</span></summary><p>Some metadata or authority-controlled settings may be updateable, while other choices can be permanent. The answer depends on the selected network, token standard and the authorities retained or revoked at deployment.</p></details>
+      </div>
+    </section>
+
+    <section class="final shell ecosystemFinal"><div><span>READY TO BUILD?</span><h2>Open HOODBTC Token Factory.</h2><p>Choose the network, configure the token, review every authority and approve deployment from your own wallet.</p><div class="guideMiniNav"><a href="/token-factory/">Token Factory Overview →</a><a href="/guides/trade/">HOODBTC Trade Guide →</a></div></div><a href="https://tokenfactory.hoodbtc.com" target="_blank" rel="noopener noreferrer">Create Token ↗</a></section>
+  </main>
+
+  <footer><div class="shell foot"><div class="footBrand"><a class="brand" href="/"><img src="/hoodbtc-logo.png" alt="HOODBTC"><span>HOOD<b>BTC</b></span></a><p>One HOODBTC ecosystem for wallet-first trading and self-custodial token creation.</p></div><div><h4>Trade</h4><a href="/dex-trading/">DEX Overview</a><a href="/guides/trade/">How to Trade</a><a href="https://trade.hoodbtc.com" target="_blank" rel="noopener noreferrer">Trade Now ↗</a></div><div><h4>Build</h4><a href="/token-factory/">Token Factory</a><a href="/guides/token-factory/">Token Guide</a><a href="https://tokenfactory.hoodbtc.com" target="_blank" rel="noopener noreferrer">Create Token ↗</a></div><div><h4>Company</h4><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/contact">Contact</a></div></div><div class="shell copyright"><span>© 2026 HOODBTC. ALL RIGHTS RESERVED.</span><span>SELF-CUSTODIAL TOKEN CREATION</span></div></footer>
+</body>
+</html>
