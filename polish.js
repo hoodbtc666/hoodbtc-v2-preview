@@ -3,6 +3,8 @@
   const FACTORY_URL = 'https://tokenfactory.hoodbtc.com';
   const DEX_INFO_URL = '/dex-trading/';
   const FACTORY_INFO_URL = '/token-factory/';
+  const TRADE_GUIDE_URL = '/guides/trade/';
+  const FACTORY_GUIDE_URL = '/guides/token-factory/';
 
   const externalLink = (href, label, className = '') =>
     `<a${className ? ` class="${className}"` : ''} href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`;
@@ -90,8 +92,9 @@
       mobile.innerHTML = `
         <a href="#ecosystem">Ecosystem</a>
         <a href="${DEX_INFO_URL}">DEX Trading</a>
+        <a href="${TRADE_GUIDE_URL}">How to Trade</a>
         <a href="${FACTORY_INFO_URL}">Token Factory</a>
-        <a href="#connect">How to Connect</a>
+        <a href="${FACTORY_GUIDE_URL}">How to Create a Token</a>
         <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
         <a href="#community">Community</a>
@@ -179,7 +182,10 @@
             <span>Non-custodial workflow</span>
             <span>Shared liquidity</span>
           </div>
-          <a class="seoTextLink" href="${DEX_INFO_URL}">Learn about DEX trading →</a>
+          <div class="productGuideLinks">
+            <a class="seoTextLink" href="${DEX_INFO_URL}">DEX overview →</a>
+            <a class="seoTextLink" href="${TRADE_GUIDE_URL}">How to use HOODBTC Trade →</a>
+          </div>
           <div class="productFooter">
             <small>trade.hoodbtc.com</small>
             ${externalLink(TRADE_URL, 'Trade Now ↗', 'productButton')}
@@ -197,7 +203,10 @@
             <span>Wallet-approved deployment</span>
             <span>No seed phrase custody</span>
           </div>
-          <a class="seoTextLink" href="${FACTORY_INFO_URL}">Explore the Token Factory guide →</a>
+          <div class="productGuideLinks">
+            <a class="seoTextLink" href="${FACTORY_INFO_URL}">Token Factory overview →</a>
+            <a class="seoTextLink" href="${FACTORY_GUIDE_URL}">How to create a token →</a>
+          </div>
           <div class="productFooter">
             <small>tokenfactory.hoodbtc.com</small>
             ${externalLink(FACTORY_URL, 'Create Token ↗', 'productButton')}
@@ -209,6 +218,14 @@
         <div><small>ONE BRAND</small><b>HOODBTC</b></div>
         <span aria-hidden="true">→</span>
         <p><strong>Separate products, connected experience.</strong> Token creation does not automatically list a token on HOODBTC Trade. Each product keeps its own workflow and user approvals.</p>
+      </div>
+
+      <div class="guideLaunchpad">
+        <div class="guideLaunchpadHead"><div><small>START WITH A GUIDE</small><h3>Learn each product before you use it.</h3></div><p>Two practical walkthroughs explain the full user journey from wallet connection to the final action.</p></div>
+        <div class="guideLaunchpadGrid">
+          <a href="${TRADE_GUIDE_URL}"><small>TRADE GUIDE</small><b>How to use HOODBTC Trade →</b><span>Connect a wallet, choose a market, build an order, monitor a position and exit deliberately.</span></a>
+          <a href="${FACTORY_GUIDE_URL}"><small>TOKEN FACTORY GUIDE</small><b>How to create a token →</b><span>Choose a network, set token parameters, review authorities, deploy and verify onchain.</span></a>
+        </div>
       </div>`;
   }
 
@@ -279,9 +296,9 @@
       columns[1].innerHTML = `
         <h4>Products</h4>
         <a href="${DEX_INFO_URL}">DEX Trading</a>
+        <a href="${TRADE_GUIDE_URL}">How to Trade</a>
         <a href="${FACTORY_INFO_URL}">Token Factory</a>
-        ${externalLink(TRADE_URL, 'Trade Now ↗')}
-        ${externalLink(FACTORY_URL, 'Create Token ↗')}`;
+        <a href="${FACTORY_GUIDE_URL}">Token Creation Guide</a>`;
     }
   }
 
