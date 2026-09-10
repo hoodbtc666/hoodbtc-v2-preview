@@ -1,0 +1,85 @@
+/* HOODBTC H-core motion layer.
+   Rotates only a masked central crop of the existing hero artwork so the H feels like a 3D onchain core.
+   The outer rings, chain orbits and lower platform remain independent. */
+
+.imageHeroV3 .heroHCore{
+  position:absolute;
+  left:50%;
+  top:43%;
+  width:48%;
+  height:52%;
+  transform:translate(-50%,-50%);
+  z-index:6;
+  pointer-events:none;
+  perspective:760px;
+  transform-style:preserve-3d;
+}
+
+/* Dark core plate covers the static H beneath while the rotating face turns edge-on. */
+.imageHeroV3 .heroHCore::before{
+  content:"";
+  position:absolute;
+  inset:4% 2%;
+  border-radius:42%;
+  background:radial-gradient(ellipse at center,rgba(9,24,13,.94) 0%,rgba(3,10,6,.88) 56%,rgba(2,7,4,.3) 75%,transparent 88%);
+  box-shadow:inset 0 0 28px rgba(76,243,122,.10),0 0 24px rgba(76,243,122,.07);
+}
+
+.imageHeroV3 .heroHCoreRotor{
+  position:absolute;
+  inset:0;
+  transform-style:preserve-3d;
+  will-change:transform;
+  animation:hoodHCoreSpin 18s linear infinite;
+}
+
+.imageHeroV3 .heroHCoreRotor::before,
+.imageHeroV3 .heroHCoreRotor::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  background-image:url('/IMG_8612.jpeg');
+  background-repeat:no-repeat;
+  background-size:208.333% auto;
+  background-position:50% 43%;
+  filter:drop-shadow(0 0 7px rgba(76,243,122,.24));
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 0 56%,rgba(0,0,0,.94) 63%,rgba(0,0,0,.38) 74%,transparent 86%);
+  mask-image:radial-gradient(ellipse at center,#000 0 56%,rgba(0,0,0,.94) 63%,rgba(0,0,0,.38) 74%,transparent 86%);
+}
+
+.imageHeroV3 .heroHCoreRotor::after{
+  transform:rotateY(180deg);
+}
+
+@keyframes hoodHCoreSpin{
+  to{transform:rotateY(360deg)}
+}
+
+@media(max-width:700px){
+  .imageHeroV3 .heroHCore{
+    top:43%;
+    width:47%;
+    height:51%;
+    perspective:620px;
+  }
+  .imageHeroV3 .heroHCore::before{
+    box-shadow:inset 0 0 18px rgba(76,243,122,.08),0 0 12px rgba(76,243,122,.05);
+  }
+  .imageHeroV3 .heroHCoreRotor{
+    animation-duration:22s;
+  }
+  .imageHeroV3 .heroHCoreRotor::before,
+  .imageHeroV3 .heroHCoreRotor::after{
+    filter:drop-shadow(0 0 4px rgba(76,243,122,.18));
+  }
+}
+
+@media(max-width:390px){
+  .imageHeroV3 .heroHCore{width:46%;height:50%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .imageHeroV3 .heroHCoreRotor{animation:none!important}
+}
