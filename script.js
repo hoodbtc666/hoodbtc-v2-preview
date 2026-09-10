@@ -39,12 +39,12 @@
     }
   };
 
-  const loadPolishStyle = () => {
-    if (document.getElementById('hoodbtc-polish-style')) return;
+  const loadStylesheet = (id, href) => {
+    if (document.getElementById(id)) return;
     const link = document.createElement('link');
-    link.id = 'hoodbtc-polish-style';
+    link.id = id;
     link.rel = 'stylesheet';
-    link.href = '/polish.css';
+    link.href = href;
     document.head.appendChild(link);
   };
 
@@ -57,7 +57,9 @@
   };
 
   const loadCore = () => {
-    loadPolishStyle();
+    loadStylesheet('hoodbtc-polish-style', '/polish.css');
+    loadStylesheet('hoodbtc-seo-style', '/seo.css');
+
     const core = document.createElement('script');
     core.src = '/script-v3.js';
     core.onload = () => {

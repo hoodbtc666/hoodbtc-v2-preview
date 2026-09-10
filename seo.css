@@ -1,0 +1,33 @@
+/* SEO/navigation refinement layer. Scoped to the existing polished HOODBTC home experience. */
+.hoodbtcPolished .seoTextLink{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  margin:-8px 0 22px;
+  color:#9be8aa;
+  text-decoration:none;
+  font:600 10px 'IBM Plex Mono',monospace;
+  letter-spacing:.45px;
+  border-bottom:1px solid rgba(76,243,122,.2);
+  padding-bottom:5px;
+  transition:color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.hoodbtcPolished .seoTextLink:hover{
+  color:var(--green2);
+  border-color:rgba(76,243,122,.6);
+  transform:translateX(2px);
+}
+.hoodbtcPolished .seoTextLink:focus-visible{
+  outline:2px solid var(--green);
+  outline-offset:4px;
+  border-radius:2px;
+}
+
+@media(max-width:640px){
+  .hoodbtcPolished .seoTextLink{margin:-3px 0 20px;font-size:9px;line-height:1.5}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hoodbtcPolished .seoTextLink{transition:none!important}
+}
