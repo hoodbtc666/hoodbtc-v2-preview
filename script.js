@@ -39,14 +39,38 @@
     }
   };
 
+  const loadPolishStyle = () => {
+    if (document.getElementById('hoodbtc-polish-style')) return;
+    const link = document.createElement('link');
+    link.id = 'hoodbtc-polish-style';
+    link.rel = 'stylesheet';
+    link.href = '/polish.css';
+    document.head.appendChild(link);
+  };
+
+  const loadPolish = () => {
+    if (document.getElementById('hoodbtc-polish-script')) return;
+    const polish = document.createElement('script');
+    polish.id = 'hoodbtc-polish-script';
+    polish.src = '/polish.js';
+    document.head.appendChild(polish);
+  };
+
   const loadCore = () => {
+    loadPolishStyle();
     const core = document.createElement('script');
     core.src = '/script-v3.js';
     core.onload = () => {
       runBrandPatch();
-      requestAnimationFrame(runBrandPatch);
+      requestAnimationFrame(() => {
+        runBrandPatch();
+        loadPolish();
+      });
     };
-    core.onerror = runBrandPatch;
+    core.onerror = () => {
+      runBrandPatch();
+      loadPolish();
+    };
     document.head.appendChild(core);
   };
 
