@@ -82,11 +82,25 @@
     document.head.appendChild(link);
   };
 
+  const loadMobileFinal = () => {
+    loadStylesheet('hoodbtc-mobile-final-style', '/mobile-final.css');
+    if (document.getElementById('hoodbtc-mobile-final-script')) return;
+    const mobileFinal = document.createElement('script');
+    mobileFinal.id = 'hoodbtc-mobile-final-script';
+    mobileFinal.src = '/mobile-final.js';
+    document.head.appendChild(mobileFinal);
+  };
+
   const loadPolish = () => {
-    if (document.getElementById('hoodbtc-polish-script')) return;
+    if (document.getElementById('hoodbtc-polish-script')) {
+      loadMobileFinal();
+      return;
+    }
     const polish = document.createElement('script');
     polish.id = 'hoodbtc-polish-script';
     polish.src = '/polish.js';
+    polish.onload = () => requestAnimationFrame(loadMobileFinal);
+    polish.onerror = loadMobileFinal;
     document.head.appendChild(polish);
   };
 
