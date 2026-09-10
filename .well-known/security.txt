@@ -1,0 +1,5 @@
+Contact: https://hoodbtc.com/contact/
+Policy: https://hoodbtc.com/security/#responsible-disclosure
+Canonical: https://hoodbtc.com/.well-known/security.txt
+Preferred-Languages: en
+Expires: 2027-09-10T23:59:59Z
