@@ -39,6 +39,26 @@
     }
   };
 
+  const addOnchainOrbits = () => {
+    const hero = document.querySelector('.imageHeroV3');
+    if (!hero || hero.querySelector('.chainOrbit')) return;
+
+    const makeOrbit = (className, count) => {
+      const orbit = document.createElement('span');
+      orbit.className = `chainOrbit ${className}`;
+      orbit.setAttribute('aria-hidden', 'true');
+      for (let i = 0; i < count; i += 1) {
+        const link = document.createElement('i');
+        link.style.setProperty('--n', i);
+        orbit.appendChild(link);
+      }
+      return orbit;
+    };
+
+    hero.appendChild(makeOrbit('chainOuter', 12));
+    hero.appendChild(makeOrbit('chainInner', 10));
+  };
+
   const loadStylesheet = (id, href) => {
     if (document.getElementById(id)) return;
     const link = document.createElement('link');
@@ -60,18 +80,22 @@
     loadStylesheet('hoodbtc-polish-style', '/polish.css');
     loadStylesheet('hoodbtc-seo-style', '/seo.css');
     loadStylesheet('hoodbtc-mobile-smooth-style', '/mobile-smooth.css');
+    loadStylesheet('hoodbtc-chain-orbits-style', '/chain-orbits.css');
 
     const core = document.createElement('script');
     core.src = '/script-v3.js';
     core.onload = () => {
       runBrandPatch();
+      addOnchainOrbits();
       requestAnimationFrame(() => {
         runBrandPatch();
+        addOnchainOrbits();
         loadPolish();
       });
     };
     core.onerror = () => {
       runBrandPatch();
+      addOnchainOrbits();
       loadPolish();
     };
     document.head.appendChild(core);
