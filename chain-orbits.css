@@ -76,18 +76,32 @@
     margin:-4px 0 0 -8px;
   }
 
-  /* Bring back only the two lightest original rings on phones. */
+  /* Bring back only the lightest original rings on phones. */
   .imageHeroV3 .rr1{animation:v3CW 24s linear infinite!important}
   .imageHeroV3 .rr2{animation:v3CCW 18s linear infinite!important}
+
+  /* Restore the lower on-chain platform ring the user highlighted.
+     Keep it slow so it reads as a rotating base without reintroducing scroll jank. */
+  .imageHeroV3 .br1{
+    display:block!important;
+    animation:v3CW 14s linear infinite!important;
+    will-change:transform;
+    opacity:.9;
+  }
 }
 
 @media(max-width:390px){
   .imageHeroV3 .chainOrbit.chainOuter{--chain-radius:122px}
   .imageHeroV3 .chainOrbit.chainInner{--chain-radius:99px}
+  .imageHeroV3 .br1{
+    display:block!important;
+    animation-duration:16s!important;
+  }
 }
 
 @media(prefers-reduced-motion:reduce){
   .imageHeroV3 .chainOrbit,
   .imageHeroV3 .rr1,
-  .imageHeroV3 .rr2{animation:none!important}
+  .imageHeroV3 .rr2,
+  .imageHeroV3 .br1{animation:none!important}
 }
