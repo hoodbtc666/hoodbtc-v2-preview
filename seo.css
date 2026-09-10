@@ -1,4 +1,4 @@
-/* SEO/navigation refinement layer. Scoped to the existing polished HOODBTC home experience. */
+/* SEO/navigation refinement layer. Scoped to the existing polished HOODBTC experience. */
 .hoodbtcPolished .seoTextLink{
   display:inline-flex;
   align-items:center;
@@ -24,8 +24,66 @@
   border-radius:2px;
 }
 
+/* SEO landing pages intentionally ship without menu JavaScript. On small screens,
+   turn their existing semantic navigation into a lightweight horizontal product bar.
+   The main homepage is excluded because it has its own .menu-btn/mobile panel. */
+@media(max-width:900px){
+  body.hoodbtcPolished:not(:has(.menu-btn)) .topbar{
+    height:auto;
+    min-height:var(--header-h);
+  }
+  body.hoodbtcPolished:not(:has(.menu-btn)) .nav{
+    height:auto;
+    min-height:var(--header-h);
+    flex-wrap:wrap;
+    gap:8px 16px;
+    padding:10px 0 9px;
+  }
+  body.hoodbtcPolished:not(:has(.menu-btn)) .brand{
+    margin-right:auto;
+  }
+  body.hoodbtcPolished:not(:has(.menu-btn)) .navBtn{
+    display:inline-flex;
+    padding:11px 15px;
+    font-size:11px;
+  }
+  body.hoodbtcPolished:not(:has(.menu-btn)) .links{
+    display:flex;
+    order:3;
+    width:100%;
+    margin:0;
+    gap:7px;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    scrollbar-width:none;
+    padding:2px 0 1px;
+  }
+  body.hoodbtcPolished:not(:has(.menu-btn)) .links::-webkit-scrollbar{display:none}
+  body.hoodbtcPolished:not(:has(.menu-btn)) .links a{
+    flex:0 0 auto;
+    border:1px solid #233028;
+    border-radius:999px;
+    padding:8px 11px;
+    background:#080c09;
+    color:#aeb8b1;
+    font:600 9px 'IBM Plex Mono',monospace;
+    letter-spacing:.25px;
+  }
+  body.hoodbtcPolished:not(:has(.menu-btn)) .links a:hover{
+    color:var(--green);
+    border-color:rgba(76,243,122,.35);
+  }
+}
+
 @media(max-width:640px){
   .hoodbtcPolished .seoTextLink{margin:-3px 0 20px;font-size:9px;line-height:1.5}
+  body.hoodbtcPolished:not(:has(.menu-btn)) .brand{font-size:16px}
+  body.hoodbtcPolished:not(:has(.menu-btn)) .brand img{width:34px;height:34px}
+  body.hoodbtcPolished:not(:has(.menu-btn)) .navBtn{padding:10px 12px;font-size:10px}
+}
+
+@media(max-width:390px){
+  body.hoodbtcPolished:not(:has(.menu-btn)) .navBtn{font-size:9px;padding:9px 10px}
 }
 
 @media(prefers-reduced-motion:reduce){
