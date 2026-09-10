@@ -1,17 +1,21 @@
 /* HOODBTC final mobile refinement layer.
-   Loaded last so iPhone/Safari gets stable touch targets, safe-area spacing,
-   smoother fixed CTA behavior and lower paint cost without changing desktop. */
+   Loaded last so iPhone/Safari gets stable touch scrolling, safe-area spacing,
+   lighter hero compositing and predictable CTA behavior without changing desktop. */
 
 @media (max-width:700px){
   html{
     scroll-padding-top:84px;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
+    overscroll-behavior-x:none;
   }
 
   body{
     min-width:0;
     -webkit-text-size-adjust:100%;
+    overflow-x:clip!important;
+    overscroll-behavior-x:none;
+    touch-action:pan-y pinch-zoom;
   }
 
   a,button,summary{
@@ -70,9 +74,17 @@
     font-size:14px;
   }
 
-  /* Keep the hero inside the viewport while preserving the orbit effect. */
+  /* The hero is decorative: never let it compete with finger scrolling. */
   .hoodbtcPolished .heroFocus{
     overflow:clip;
+    touch-action:pan-y pinch-zoom;
+  }
+
+  .imageHeroV3,
+  .imageHeroV3 *{
+    pointer-events:none!important;
+    -webkit-user-select:none!important;
+    user-select:none!important;
   }
 
   .imageHeroV3 .heroHCoreRotor,
@@ -84,7 +96,7 @@
     backface-visibility:hidden;
   }
 
-  /* JS pauses hero motion when it is offscreen or the tab is hidden. */
+  /* JS pauses hero motion offscreen and for the full duration of touch/momentum scrolling. */
   .imageHeroV3.heroMotionPaused .heroHCoreRotor,
   .imageHeroV3.heroMotionPaused .chainOrbit,
   .imageHeroV3.heroMotionPaused .rr1,
@@ -93,7 +105,7 @@
     animation-play-state:paused!important;
   }
 
-  /* Smoother fixed CTA: keep it composited and fade it instead of popping layout. */
+  /* Fixed CTA is class-driven by IntersectionObserver. No transform animation while scrolling. */
   .hoodbtcPolished .mobileCta,
   .hoodbtcPolished .ecosystemMobileCta{
     display:grid!important;
@@ -103,23 +115,27 @@
     opacity:0;
     visibility:hidden;
     pointer-events:none!important;
-    transform:translate3d(0,10px,0)!important;
-    transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s!important;
-    contain:layout style;
+    transform:none!important;
+    transition:opacity .14s linear,visibility 0s linear .14s!important;
+    contain:none!important;
   }
 
-  .hoodbtcPolished .mobileCta[style*="display: block"],
-  .hoodbtcPolished .ecosystemMobileCta[style*="display: block"]{
-    display:grid!important;
+  .hoodbtcPolished .mobileCta.isVisible,
+  .hoodbtcPolished .ecosystemMobileCta.isVisible{
     opacity:1;
     visibility:visible;
-    transform:translate3d(0,0,0)!important;
+    pointer-events:auto!important;
     transition-delay:0s!important;
   }
 
-  .hoodbtcPolished .mobileCta[style*="display: block"] a,
-  .hoodbtcPolished .ecosystemMobileCta[style*="display: block"] a{
+  .hoodbtcPolished .mobileCta.isVisible a,
+  .hoodbtcPolished .ecosystemMobileCta.isVisible a{
     pointer-events:auto!important;
+  }
+
+  .hoodTouchActive .hoodbtcPolished .mobileCta,
+  .hoodTouchActive .hoodbtcPolished .ecosystemMobileCta{
+    transition:none!important;
   }
 
   .hoodbtcPolished .mobileCta a,
@@ -130,13 +146,12 @@
     min-height:52px;
   }
 
-  /* Small tactile response without expensive hover animation on touch screens. */
+  /* Small tactile response only after a real tap; no hover lift on touch screens. */
   .hoodbtcPolished .menu-btn:active,
   .hoodbtcPolished .heroActions>a:active,
   .hoodbtcPolished .productButton:active,
   .hoodbtcPolished .finalActions>a:active,
   .hoodbtcPolished .mobileCta a:active{
-    transform:scale(.985)!important;
     opacity:.9;
   }
 
