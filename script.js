@@ -59,6 +59,20 @@
     hero.appendChild(makeOrbit('chainInner', 10));
   };
 
+  const addHCoreSpin = () => {
+    const hero = document.querySelector('.imageHeroV3');
+    if (!hero || hero.querySelector('.heroHCore')) return;
+
+    const stage = document.createElement('span');
+    stage.className = 'heroHCore';
+    stage.setAttribute('aria-hidden', 'true');
+
+    const rotor = document.createElement('span');
+    rotor.className = 'heroHCoreRotor';
+    stage.appendChild(rotor);
+    hero.appendChild(stage);
+  };
+
   const loadStylesheet = (id, href) => {
     if (document.getElementById(id)) return;
     const link = document.createElement('link');
@@ -81,21 +95,25 @@
     loadStylesheet('hoodbtc-seo-style', '/seo.css');
     loadStylesheet('hoodbtc-mobile-smooth-style', '/mobile-smooth.css');
     loadStylesheet('hoodbtc-chain-orbits-style', '/chain-orbits.css');
+    loadStylesheet('hoodbtc-h-core-spin-style', '/h-core-spin.css');
 
     const core = document.createElement('script');
     core.src = '/script-v3.js';
     core.onload = () => {
       runBrandPatch();
       addOnchainOrbits();
+      addHCoreSpin();
       requestAnimationFrame(() => {
         runBrandPatch();
         addOnchainOrbits();
+        addHCoreSpin();
         loadPolish();
       });
     };
     core.onerror = () => {
       runBrandPatch();
       addOnchainOrbits();
+      addHCoreSpin();
       loadPolish();
     };
     document.head.appendChild(core);
