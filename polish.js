@@ -131,7 +131,7 @@
     const actions = hero.querySelector('.heroActions');
     if (actions) {
       actions.innerHTML = `
-        ${externalLink(TRADE_URL, 'Open HOODBTC Trade ↗', 'primary mainTrade')}
+        ${externalLink(TRADE_URL, 'Trade Now ↗', 'primary mainTrade')}
         ${externalLink(FACTORY_URL, 'Create a Token ↗', 'ghost productAction')}
         <a class="ghost ecosystemAction" href="#ecosystem">Explore Ecosystem ↓</a>`;
     }
@@ -182,7 +182,7 @@
           <a class="seoTextLink" href="${DEX_INFO_URL}">Learn about DEX trading →</a>
           <div class="productFooter">
             <small>trade.hoodbtc.com</small>
-            ${externalLink(TRADE_URL, 'Open Trade ↗', 'productButton')}
+            ${externalLink(TRADE_URL, 'Trade Now ↗', 'productButton')}
           </div>
         </article>
 
@@ -256,7 +256,7 @@
           <p>Trade supported onchain markets or create a token from your own wallet.</p>
         </div>
         <div class="finalActions">
-          ${externalLink(TRADE_URL, 'Open Trade ↗', 'primary')}
+          ${externalLink(TRADE_URL, 'Trade Now ↗', 'primary')}
           ${externalLink(FACTORY_URL, 'Create Token ↗', 'ghost')}
         </div>`;
     }
@@ -265,7 +265,7 @@
     if (mobileCta) {
       mobileCta.classList.add('ecosystemMobileCta');
       mobileCta.innerHTML = `
-        ${externalLink(TRADE_URL, 'Trade ↗', 'mobileTradeQuick')}
+        ${externalLink(TRADE_URL, 'Trade Now ↗', 'mobileTradeQuick')}
         ${externalLink(FACTORY_URL, 'Create Token ↗', 'mobileFactoryQuick')}`;
     }
   }
@@ -280,7 +280,7 @@
         <h4>Products</h4>
         <a href="${DEX_INFO_URL}">DEX Trading</a>
         <a href="${FACTORY_INFO_URL}">Token Factory</a>
-        ${externalLink(TRADE_URL, 'Open Trade ↗')}
+        ${externalLink(TRADE_URL, 'Trade Now ↗')}
         ${externalLink(FACTORY_URL, 'Create Token ↗')}`;
     }
   }
