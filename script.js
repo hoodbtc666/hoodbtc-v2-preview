@@ -39,6 +39,34 @@
     }
   };
 
+  const patchTrustLinks = () => {
+    document.querySelectorAll('.links a, .mobilePanel a').forEach((link) => {
+      if (link.textContent.trim() === 'Security') link.href = '/security/';
+    });
+
+    const columns = document.querySelectorAll('.foot > div');
+    if (columns[2]) {
+      const resources = columns[2];
+      const oldSecurity = Array.from(resources.querySelectorAll('a')).find((link) => link.textContent.trim() === 'Security');
+      if (oldSecurity) oldSecurity.href = '/security/';
+      if (!resources.querySelector('a[href="/community/"]')) {
+        const community = document.createElement('a');
+        community.href = '/community/';
+        community.textContent = 'Community';
+        resources.appendChild(community);
+      }
+    }
+
+    if (columns[3]) {
+      columns[3].innerHTML = `
+        <h4>Company</h4>
+        <a href="/security/">Security</a>
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/contact/">Contact</a>`;
+    }
+  };
+
   const addOnchainOrbits = () => {
     const hero = document.querySelector('.imageHeroV3');
     if (!hero || hero.querySelector('.chainOrbit')) return;
@@ -93,14 +121,21 @@
 
   const loadPolish = () => {
     if (document.getElementById('hoodbtc-polish-script')) {
+      patchTrustLinks();
       loadMobileFinal();
       return;
     }
     const polish = document.createElement('script');
     polish.id = 'hoodbtc-polish-script';
     polish.src = '/polish.js';
-    polish.onload = () => requestAnimationFrame(loadMobileFinal);
-    polish.onerror = loadMobileFinal;
+    polish.onload = () => requestAnimationFrame(() => {
+      patchTrustLinks();
+      loadMobileFinal();
+    });
+    polish.onerror = () => {
+      patchTrustLinks();
+      loadMobileFinal();
+    };
     document.head.appendChild(polish);
   };
 
