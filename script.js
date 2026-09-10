@@ -59,6 +59,7 @@
   const loadCore = () => {
     loadStylesheet('hoodbtc-polish-style', '/polish.css');
     loadStylesheet('hoodbtc-seo-style', '/seo.css');
+    loadStylesheet('hoodbtc-mobile-smooth-style', '/mobile-smooth.css');
 
     const core = document.createElement('script');
     core.src = '/script-v3.js';

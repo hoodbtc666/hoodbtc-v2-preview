@@ -1,0 +1,107 @@
+/* Mobile performance layer for hoodbtc.com.
+   Keeps the desktop visual system untouched while reducing iPhone/Safari scroll jank. */
+
+@media (max-width: 700px) {
+  html {
+    scroll-behavior: auto !important;
+    overscroll-behavior-x: none;
+  }
+
+  body {
+    overflow-x: clip !important;
+    overscroll-behavior-x: none;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Sticky blur is expensive during every scroll frame on mobile Safari. */
+  .topbar,
+  .hoodbtcPolished .topbar {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 1px 0 rgba(76,243,122,.08) !important;
+    background: rgba(2,4,3,.97) !important;
+  }
+
+  /* Preserve the hero artwork but stop the expensive continuous paint workload. */
+  .imageHeroV3::before {
+    animation: none !important;
+    filter: none !important;
+    opacity: .58 !important;
+  }
+
+  .imageHeroV3 .heroArtworkV3,
+  .imageHeroV3 .rotorRing,
+  .imageHeroV3 .baseRotor {
+    animation: none !important;
+  }
+
+  .imageHeroV3 .heroArtworkV3 {
+    filter: drop-shadow(0 0 8px rgba(76,243,122,.12)) !important;
+  }
+
+  /* These decorative layers create dozens of animated paint operations.
+     Hide them only on phones; the core artwork and main rings remain visible. */
+  .imageHeroV3 .particleField,
+  .imageHeroV3 .techGearV3,
+  .imageHeroV3 .sparkV3,
+  .imageHeroV3 .rr4,
+  .imageHeroV3 .rr5,
+  .imageHeroV3 .br2,
+  .imageHeroV3 .br3 {
+    display: none !important;
+  }
+
+  .imageHeroV3 .rotorRing,
+  .imageHeroV3 .baseRotor {
+    box-shadow: 0 0 5px rgba(76,243,122,.12), inset 0 0 6px rgba(76,243,122,.04) !important;
+  }
+
+  /* Touch devices do not need hover lift animations, which can feel like a jump after taps. */
+  .hoodbtcPolished .productPanel,
+  .hoodbtcPolished .productButton,
+  .hoodbtcPolished .heroActions > a,
+  .problemGrid article {
+    transition: none !important;
+  }
+
+  .hoodbtcPolished .productPanel:hover,
+  .problemGrid article:hover,
+  .hoodbtcPolished .heroActions > a:hover,
+  .hoodbtcPolished .productButton:hover {
+    transform: none !important;
+  }
+
+  /* The existing visibility script writes display:block. Keep the two-button CTA
+     as a grid so it never changes shape when it appears after the hero. */
+  .hoodbtcPolished .ecosystemMobileCta[style*="display: block"] {
+    display: grid !important;
+  }
+
+  .mobileCta {
+    contain: layout paint style;
+    transform: translateZ(0);
+  }
+
+  .mobileCta a,
+  .hoodbtcPolished .ecosystemMobileCta .mobileFactoryQuick {
+    box-shadow: 0 7px 20px rgba(0,0,0,.34) !important;
+  }
+
+  /* Large blurred glows are attractive on desktop but costly while scrolling on phones. */
+  .connectCardGlow {
+    filter: none !important;
+    opacity: .45;
+  }
+
+  .hoodbtcPolished .productPanel::before {
+    filter: none !important;
+    opacity: .55;
+  }
+}
+
+@media (max-width: 390px) {
+  .imageHeroV3 .rr3,
+  .imageHeroV3 .br1 {
+    display: none !important;
+  }
+}
