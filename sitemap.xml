@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://hoodbtc.com/</loc><lastmod>2026-09-09</lastmod></url>
-  <url><loc>https://hoodbtc.com/dex-trading/</loc><lastmod>2026-09-09</lastmod></url>
+  <url><loc>https://hoodbtc.com/dex-trading/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://hoodbtc.com/guides/trade/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://hoodbtc.com/token-factory/</loc><lastmod>2026-09-09</lastmod></url>
   <url><loc>https://hoodbtc.com/guides/token-factory/</loc><lastmod>2026-09-09</lastmod></url>
@@ -22,4 +22,14 @@
   <url><loc>https://hoodbtc.com/create-optimism-token/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://hoodbtc.com/decentralized-crypto-trading/</loc><lastmod>2026-09-10</lastmod></url>
   <url><loc>https://hoodbtc.com/self-custody-trading/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/no-code-token-creator/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/erc20-token-creator/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/token-creation-cost/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/mint-authority-explained/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/token-decimals-explained/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/does-creating-a-token-create-liquidity/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/create-robinhood-chain-token/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/non-custodial-dex/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/dex-vs-cex/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://hoodbtc.com/crypto-perpetual-trading/</loc><lastmod>2026-09-10</lastmod></url>
 </urlset>
