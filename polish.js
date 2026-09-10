@@ -5,6 +5,7 @@
   const FACTORY_INFO_URL = '/token-factory/';
   const TRADE_GUIDE_URL = '/guides/trade/';
   const FACTORY_GUIDE_URL = '/guides/token-factory/';
+  const COMMUNITY_URL = '/community/';
 
   const externalLink = (href, label, className = '') =>
     `<a${className ? ` class="${className}"` : ''} href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`;
@@ -84,7 +85,7 @@
         <a href="${FACTORY_INFO_URL}">Token Factory</a>
         <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
-        <a href="#community">Community</a>`;
+        <a href="${COMMUNITY_URL}">Community</a>`;
     }
 
     const mobile = document.querySelector('.mobilePanel');
@@ -97,7 +98,7 @@
         <a href="${FACTORY_GUIDE_URL}">How to Create a Token</a>
         <a href="#security">Security</a>
         <a href="#faq">FAQ</a>
-        <a href="#community">Community</a>
+        <a href="${COMMUNITY_URL}">Community</a>
         ${externalLink(TRADE_URL, 'Trade Now ↗', 'mobileTrade')}`;
 
       const menuBtn = document.querySelector('.menu-btn');
@@ -299,6 +300,13 @@
         <a href="${TRADE_GUIDE_URL}">How to Trade</a>
         <a href="${FACTORY_INFO_URL}">Token Factory</a>
         <a href="${FACTORY_GUIDE_URL}">Token Creation Guide</a>`;
+    }
+    if (columns[2]) {
+      columns[2].innerHTML = `
+        <h4>Resources</h4>
+        <a href="#security">Security</a>
+        <a href="#faq">FAQ</a>
+        <a href="${COMMUNITY_URL}">Community</a>`;
     }
   }
 
