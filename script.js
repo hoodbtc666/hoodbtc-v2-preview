@@ -113,7 +113,28 @@
 
     const core = document.createElement('script');
     core.src = '/script-v3.js';
+
+    /* script-v3 has one legacy scroll listener that reads layout on every scroll frame.
+       On phones we block scroll listeners only while that legacy script is registering,
+       then mobile-final.js replaces the CTA behavior with IntersectionObserver. */
+    const isPhone = window.matchMedia('(max-width: 700px)').matches;
+    const nativeAddEventListener = window.addEventListener;
+    let restored = false;
+    const restoreWindowEvents = () => {
+      if (restored) return;
+      restored = true;
+      if (isPhone) window.addEventListener = nativeAddEventListener;
+    };
+
+    if (isPhone) {
+      window.addEventListener = function(type, listener, options) {
+        if (type === 'scroll') return;
+        return nativeAddEventListener.call(window, type, listener, options);
+      };
+    }
+
     core.onload = () => {
+      restoreWindowEvents();
       runBrandPatch();
       addOnchainOrbits();
       addHCoreSpin();
@@ -125,6 +146,7 @@
       });
     };
     core.onerror = () => {
+      restoreWindowEvents();
       runBrandPatch();
       addOnchainOrbits();
       addHCoreSpin();
