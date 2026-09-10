@@ -1,0 +1,93 @@
+/* Lightweight on-chain hero orbits for HOODBTC.
+   Pure CSS chain links; only the orbit containers animate for smooth mobile compositing. */
+
+.imageHeroV3 .chainOrbit{
+  --chain-radius: 142px;
+  position:absolute;
+  left:50%;
+  top:42%;
+  width:0;
+  height:0;
+  z-index:7;
+  pointer-events:none;
+  transform-origin:0 0;
+  will-change:transform;
+}
+
+.imageHeroV3 .chainOrbit.chainOuter{
+  --chain-radius:153px;
+  animation:hoodChainCW 18s linear infinite;
+}
+
+.imageHeroV3 .chainOrbit.chainInner{
+  --chain-radius:126px;
+  animation:hoodChainCCW 13s linear infinite;
+}
+
+.imageHeroV3 .chainOrbit i{
+  --angle:calc(var(--n) * 30deg);
+  position:absolute;
+  left:0;
+  top:0;
+  width:22px;
+  height:10px;
+  margin:-5px 0 0 -11px;
+  border:2px solid rgba(108,255,137,.78);
+  border-radius:999px;
+  background:rgba(3,8,5,.7);
+  box-shadow:0 0 7px rgba(76,243,122,.24),inset 0 0 4px rgba(76,243,122,.12);
+  transform:rotate(var(--angle)) translateY(calc(var(--chain-radius) * -1)) rotate(90deg);
+}
+
+.imageHeroV3 .chainOrbit.chainInner i{
+  --angle:calc(var(--n) * 36deg + 18deg);
+  width:19px;
+  height:9px;
+  margin:-4.5px 0 0 -9.5px;
+  border-width:1.5px;
+  border-color:rgba(150,255,174,.55);
+  opacity:.72;
+}
+
+.imageHeroV3 .chainOrbit i::after{
+  content:"";
+  position:absolute;
+  inset:2px 4px;
+  border:1px solid rgba(195,255,207,.32);
+  border-radius:999px;
+}
+
+@keyframes hoodChainCW{to{transform:rotate(360deg)}}
+@keyframes hoodChainCCW{to{transform:rotate(-360deg)}}
+
+@media(max-width:700px){
+  .imageHeroV3 .chainOrbit.chainOuter{--chain-radius:132px;animation-duration:22s}
+  .imageHeroV3 .chainOrbit.chainInner{--chain-radius:108px;animation-duration:17s}
+  .imageHeroV3 .chainOrbit i{
+    width:19px;
+    height:9px;
+    margin:-4.5px 0 0 -9.5px;
+    border-width:1.5px;
+    box-shadow:0 0 4px rgba(76,243,122,.18);
+  }
+  .imageHeroV3 .chainOrbit.chainInner i{
+    width:16px;
+    height:8px;
+    margin:-4px 0 0 -8px;
+  }
+
+  /* Bring back only the two lightest original rings on phones. */
+  .imageHeroV3 .rr1{animation:v3CW 24s linear infinite!important}
+  .imageHeroV3 .rr2{animation:v3CCW 18s linear infinite!important}
+}
+
+@media(max-width:390px){
+  .imageHeroV3 .chainOrbit.chainOuter{--chain-radius:122px}
+  .imageHeroV3 .chainOrbit.chainInner{--chain-radius:99px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .imageHeroV3 .chainOrbit,
+  .imageHeroV3 .rr1,
+  .imageHeroV3 .rr2{animation:none!important}
+}
