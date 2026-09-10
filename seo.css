@@ -24,6 +24,20 @@
   border-radius:2px;
 }
 
+.hoodbtcPolished .productGuideLinks{display:flex;flex-wrap:wrap;gap:9px 16px;margin:-7px 0 22px}
+.hoodbtcPolished .productGuideLinks .seoTextLink{margin:0}
+.hoodbtcPolished .guideLaunchpad{margin-top:18px;padding:24px;border:1px solid #213128;background:linear-gradient(180deg,rgba(9,15,10,.94),rgba(5,8,6,.98))}
+.hoodbtcPolished .guideLaunchpadHead{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}
+.hoodbtcPolished .guideLaunchpadHead small{color:#79ff94;font:600 9px 'IBM Plex Mono',monospace;letter-spacing:1px}
+.hoodbtcPolished .guideLaunchpadHead h3{margin:8px 0 0;font-size:25px;letter-spacing:-.8px}
+.hoodbtcPolished .guideLaunchpadHead p{margin:0;max-width:500px;color:#98a39b;font-size:13px;line-height:1.6}
+.hoodbtcPolished .guideLaunchpadGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hoodbtcPolished .guideLaunchpadGrid a{display:block;padding:18px;border:1px solid #26372d;background:#080c09;color:#e7eee9;text-decoration:none;transition:border-color .2s ease,transform .2s ease}
+.hoodbtcPolished .guideLaunchpadGrid a:hover{border-color:rgba(76,243,122,.48);transform:translateY(-2px)}
+.hoodbtcPolished .guideLaunchpadGrid small{color:#79ff94;font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.8px}
+.hoodbtcPolished .guideLaunchpadGrid b{display:block;margin:12px 0 7px;font-size:17px}
+.hoodbtcPolished .guideLaunchpadGrid span{display:block;color:#94a098;font-size:12px;line-height:1.55}
+
 /* SEO landing pages intentionally ship without menu JavaScript. On small screens,
    turn their existing semantic navigation into a lightweight horizontal product bar.
    The main homepage is excluded because it has its own .menu-btn/mobile panel. */
@@ -77,6 +91,12 @@
 
 @media(max-width:640px){
   .hoodbtcPolished .seoTextLink{margin:-3px 0 20px;font-size:9px;line-height:1.5}
+  .hoodbtcPolished .productGuideLinks{margin:-2px 0 20px;gap:8px 14px}
+  .hoodbtcPolished .productGuideLinks .seoTextLink{margin:0}
+  .hoodbtcPolished .guideLaunchpad{padding:20px}
+  .hoodbtcPolished .guideLaunchpadHead{display:block}
+  .hoodbtcPolished .guideLaunchpadHead p{margin-top:10px}
+  .hoodbtcPolished .guideLaunchpadGrid{grid-template-columns:1fr}
   body.hoodbtcPolished:not(:has(.menu-btn)) .brand{font-size:16px}
   body.hoodbtcPolished:not(:has(.menu-btn)) .brand img{width:34px;height:34px}
   body.hoodbtcPolished:not(:has(.menu-btn)) .navBtn{padding:10px 12px;font-size:10px}
@@ -87,5 +107,5 @@
 }
 
 @media(prefers-reduced-motion:reduce){
-  .hoodbtcPolished .seoTextLink{transition:none!important}
+  .hoodbtcPolished .seoTextLink,.hoodbtcPolished .guideLaunchpadGrid a{transition:none!important}
 }
