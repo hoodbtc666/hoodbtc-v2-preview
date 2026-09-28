@@ -180,10 +180,10 @@ a,button{touch-action:manipulation}
 
 .mobileCta{display:none}
 footer{border-top:1px solid var(--line);padding:60px 0 28px;background:#020403}
-.foot{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:50px}
+.foot{display:grid;grid-template-columns:minmax(0,1.7fr) repeat(4,minmax(0,1fr));gap:38px}
 .footBrand p{max-width:430px;color:#777f7a;font-size:13px;line-height:1.8}
-.foot>div:not(:first-child){display:flex;flex-direction:column;gap:13px}
-.foot h4{font-size:12px;margin:0 0 12px}
+.foot>div{min-width:0}.foot>div:not(:first-child){display:flex;flex-direction:column;gap:13px}
+.foot h4{font-size:12px;margin:0 0 12px}.foot a{overflow-wrap:anywhere}
 .copyright{border-top:1px solid var(--line);margin-top:50px;padding-top:23px;display:flex;justify-content:space-between;color:#4e5751;font:500 8px 'IBM Plex Mono';letter-spacing:1.3px}
 
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:4px}
@@ -206,8 +206,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .securityGrid,.infoGrid{grid-template-columns:1fr 1fr}
   .visionGrid{grid-template-columns:1fr 1fr}
   .communityGrid{grid-template-columns:1fr 1fr}
-  .foot{grid-template-columns:2fr 1fr 1fr}
-  .foot>div:last-child{grid-column:2}
+  .foot{grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+  .footBrand{grid-row:span 2}
+  .foot>div:last-child{grid-column:auto}
 }
 
 @media(max-width:640px){
@@ -263,9 +264,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .final{padding:30px 23px;display:block;margin-bottom:70px}
   .final h2{font-size:33px}
   .final>a{display:inline-flex;margin-top:16px}
-  .foot{grid-template-columns:1fr 1fr;gap:35px}
-  .footBrand{grid-column:1/-1}
+  .foot{grid-template-columns:1fr 1fr;gap:30px 24px}
+  .footBrand{grid-column:1/-1;grid-row:auto}
   .foot>div:last-child{grid-column:auto}
+  .foot a{min-height:44px;display:flex;align-items:center}
   .copyright{display:block;line-height:2.2}
   .mobileCta{display:block;position:fixed;left:14px;right:14px;bottom:max(12px,env(safe-area-inset-bottom));z-index:45;pointer-events:none}
   .mobileCta a{pointer-events:auto;display:block;text-align:center;background:var(--green);color:#041008;text-decoration:none;font-size:13px;font-weight:800;padding:14px;border-radius:999px;box-shadow:0 8px 35px rgba(0,0,0,.5),0 0 25px rgba(76,243,122,.12)}
