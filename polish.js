@@ -26,7 +26,7 @@
           logo: 'https://hoodbtc.com/IMG_8612.jpeg',
           description: 'An onchain product ecosystem for wallet-first decentralized trading and self-custodial multi-chain token creation.',
           sameAs: [
-            'https://x.com/peterhazimcrypt',
+            'https://x.com/hoodbtc666',
             'https://www.tiktok.com/@hoodbtc666k',
             'https://t.me/hoodbtc2'
           ]
