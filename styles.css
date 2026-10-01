@@ -170,6 +170,8 @@ a,button{touch-action:manipulation}
 .socialMark{display:grid;place-items:center;width:34px;height:34px;border:1px solid #334039;border-radius:10px;color:var(--green);font-size:18px}
 .socialMark.redditMark{padding:0;overflow:hidden;border-color:transparent;background:transparent}
 .socialMark.redditMark img{display:block;width:100%;height:100%;object-fit:contain}
+.socialLogoMark{padding:4px;overflow:hidden;background:#090d0a}
+.socialLogoMark img{display:block;width:100%;height:100%;object-fit:contain;border-radius:7px}
 .communityGrid span{font-size:12px;color:#8e9791;margin-top:auto}
 .communityGrid i{align-self:flex-end;font-style:normal}
 
