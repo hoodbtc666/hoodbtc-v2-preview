@@ -784,17 +784,38 @@
 
     const mobileCta = document.querySelector('.mobileCta');
     const heroSection = document.querySelector('.heroFocus');
+    const communitySection = document.querySelector('#community');
+    const finalSection = document.querySelector('.ecosystemFinal, .final');
     if (mobileCta) {
       mobileCta.setAttribute('aria-label', 'Quick actions');
 
-      /* Replace the old per-scroll layout read with a composited visibility class. */
+      /* Keep quick actions visible after the hero, but out of the way while browsing
+         the social directory and while the final on-page CTA is already visible. */
       if (heroSection && 'IntersectionObserver' in window) {
-        const ctaObserver = new IntersectionObserver((entries) => {
+        let heroPast = false;
+        let communityVisible = false;
+        let finalVisible = false;
+        const syncCta = () => {
+          mobileCta.classList.toggle('isVisible', heroPast && !communityVisible && !finalVisible);
+        };
+
+        const heroObserver = new IntersectionObserver((entries) => {
           const entry = entries[0];
-          const heroAboveViewport = Boolean(entry && !entry.isIntersecting && entry.boundingClientRect.bottom <= 120);
-          mobileCta.classList.toggle('isVisible', heroAboveViewport);
+          heroPast = Boolean(entry && !entry.isIntersecting && entry.boundingClientRect.bottom <= 120);
+          syncCta();
         }, { rootMargin: '-120px 0px 0px 0px', threshold: 0 });
-        ctaObserver.observe(heroSection);
+        heroObserver.observe(heroSection);
+
+        const suppressObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.target === communitySection) communityVisible = entry.isIntersecting;
+            if (entry.target === finalSection) finalVisible = entry.isIntersecting;
+          });
+          syncCta();
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.02 });
+
+        if (communitySection) suppressObserver.observe(communitySection);
+        if (finalSection) suppressObserver.observe(finalSection);
       }
     }
   };

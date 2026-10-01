@@ -285,3 +285,91 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
+
+
+/* Social directory: all brand marks are first-party/local files for reliable mobile rendering. */
+.secondarySocial{margin-top:46px}
+.secondarySocial>h2,.secondarySocial>h3{margin:0 0 20px;color:#f4f7f5;letter-spacing:-.5px}
+.secondarySocial>h2{font-size:30px}
+.secondarySocial>h3{font-size:26px}
+.secondarySocialGrid{margin-top:0}
+.channelCard{display:flex;flex-direction:column}
+.channelLogo{display:block;width:42px;height:42px;object-fit:contain;border-radius:10px;margin-bottom:18px}
+.channelCard h3{margin-top:18px}
+@media(max-width:720px){
+  .secondarySocial{margin-top:34px}
+  .secondarySocial>h2,.secondarySocial>h3{font-size:24px}
+  .channelLogo{width:38px;height:38px}
+}
+
+
+/* Mobile social directory polish v2 */
+.communityGrid a{position:relative}
+.communityGrid i{
+  width:30px;
+  height:30px;
+  flex:0 0 30px;
+  border:1px solid #334039;
+  border-radius:9px;
+  background:#0c120e;
+  position:relative;
+  font-size:0;
+  line-height:0;
+}
+.communityGrid i::before{
+  content:"↗︎";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#dce4df;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-size:20px;
+  font-weight:600;
+  line-height:1;
+}
+.communityGrid i::after{content:none}
+.socialLogoMark img[src$="/x.svg"],
+.socialLogoMark img[src$="/tiktok.svg"]{
+  filter:brightness(0) invert(1);
+}
+.socialLogoMark img[src$="/reddit.svg"],
+.socialLogoMark img[src$="/telegram.svg"]{
+  background:transparent;
+  filter:none;
+  padding:0;
+}
+.socialLogoMark img[src$="/whatsapp.svg"]{
+  background:#25d366;
+  filter:brightness(0) invert(1);
+  padding:5px;
+}
+.socialLogoMark img[src$="/snapchat.svg"]{
+  background:#fffc00;
+  padding:5px;
+}
+.socialLogoMark img[src$="/mewe.svg"],
+.socialLogoMark img[src$="/tumblr.svg"]{
+  background:#f7f9f8;
+  padding:5px;
+}
+@media(max-width:720px){
+  .communityGrid a{
+    min-height:132px;
+    height:auto;
+    padding:18px;
+  }
+  .socialMark{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+  }
+  .socialLogoMark{padding:5px}
+  .communityGrid span{
+    font-size:13px;
+    line-height:1.35;
+    color:#a8b0ab;
+  }
+  .community{padding-bottom:82px}
+  .secondarySocial{margin-top:38px}
+}
