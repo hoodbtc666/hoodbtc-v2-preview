@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Substack</title>
+  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+  <path fill="#ff6719" d="M15 15h34v5H15zm0 8h34v5H15zm0 8h34v5H15zm3 8h28v12L32 59 18 51z"/>
+</svg>
